@@ -8,9 +8,9 @@
 
 ## Introduction
 
-Forjora is a collaborative networking platform designed to help students discover, connect, and build teams for projects, hackathons, research papers, startup ideas, competitions, and open-source contributions.
+Forjora is a collaborative networking platform designed to help students discover, connect, and build teams for projects, events and research papers.
 
-The platform aims to eliminate one of the biggest challenges faced by students: finding reliable teammates with the right skills, interests, and commitment level.
+The platform aims to eliminate one of the biggest challenges faced by students: finding reliable teammates with the right skills, interests, and commitment level and availability hours.
 
 Instead of relying on WhatsApp groups, Discord servers, or random social media posts, students can create professional profiles showcasing their skills, interests, experience, and availability. Based on this information, Forjora recommends suitable teammates and allows users to collaborate efficiently throughout the development process.
 
@@ -18,7 +18,7 @@ Instead of relying on WhatsApp groups, Discord servers, or random social media p
 
 # Vision
 
-To become the go-to collaboration platform where students can build innovative projects, participate in hackathons, publish research, launch startups, and grow together.
+To become the go-to collaboration platform where students can build innovative projects, participate in events, help each others with  research papers and grow together.
 
 ---
 
@@ -70,18 +70,8 @@ Primary Users
 
 - College Students
 - University Students
-- Hackathon Participants
-- Researchers
-- Developers
-- Startup Enthusiasts
+- Event Participants
 
-Future Users
-
-- Professors
-- Mentors
-- Student Clubs
-- Organizations
-- Recruiters
 
 ---
 
@@ -137,16 +127,7 @@ Future Users
 
 ## Future Features
 
-- AI Team Recommendation
-- GitHub Integration
-- Resume Generation
-- Portfolio Builder
-- Research Collaboration
-- Startup Incubator
-- Mentor Matching
-- Event Recommendations
-- Skill Verification
-- AI Project Suggestions
+- 
 
 ---
 
