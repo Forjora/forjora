@@ -2,344 +2,338 @@
 
 > **Connecting Builders. Creating Opportunities.**
 
----
+Forjora is a collaborative platform built exclusively for college students to simplify the process of finding teammates, managing projects, participating in hackathons, and collaborating on research papers.
 
-# Project Overview
-
-## Introduction
-
-Forjora is a collaborative networking platform designed to help students discover, connect, and build teams for projects, events and research papers.
-
-The platform aims to eliminate one of the biggest challenges faced by students: finding reliable teammates with the right skills, interests, and commitment level and availability hours.
-
-Instead of relying on WhatsApp groups, Discord servers, or random social media posts, students can create professional profiles showcasing their skills, interests, experience, and availability. Based on this information, Forjora recommends suitable teammates and allows users to collaborate efficiently throughout the development process.
+Unlike general social networking or messaging platforms, Forjora provides a dedicated ecosystem where students can connect based on skills, interests, and availability while accessing tools that support collaboration throughout the entire development lifecycle.
 
 ---
 
 # Vision
 
-To become the go-to collaboration platform where students can build innovative projects, participate in events, help each others with  research papers and grow together.
+To become the go-to collaboration platform for college students by making it easier to build projects, participate in hackathons, conduct research, and learn together.
 
 ---
 
 # Mission
 
-To make collaboration easier, smarter, and more accessible by connecting students based on skills, goals, and interests while providing tools that simplify teamwork.
+To simplify student collaboration by providing one centralized platform where students can discover teammates, showcase their work, manage projects, receive AI guidance, and grow their technical and research experience.
 
 ---
 
 # Problem Statement
 
-Students frequently encounter the following problems:
+Students frequently face several challenges while working on technical and academic activities.
 
-- Difficulty finding teammates with required technical skills.
-- Lack of trust and transparency among team members.
-- Teams formed randomly often fail due to poor communication.
-- No centralized platform dedicated to academic and technical collaboration.
-- Students miss opportunities because they cannot find suitable collaborators quickly.
+- Finding reliable teammates is difficult.
+- Teams are often formed randomly without considering skills or interests.
+- Communication is scattered across multiple platforms.
+- Project progress is difficult to track.
+- Students have limited ways to showcase their work.
+- Finding research collaborators is challenging.
+- Students often miss hackathons and important events due to poor organization.
+- Beginners struggle to choose technologies and plan projects.
 
 ---
 
 # Proposed Solution
 
-Forjora provides a centralized platform where students can:
+Forjora solves these challenges by providing a centralized collaboration ecosystem that enables students to:
 
-- Create professional profiles.
-- Showcase technical and non-technical skills.
-- Display project experience.
-- Find teammates using intelligent recommendations.
-- Join projects, hackathons, and research groups.
-- Communicate through an integrated messaging system.
-- Manage project tasks and collaboration.
+- Build professional profiles
+- Discover teammates through intelligent matching
+- Collaborate on projects
+- Participate in hackathons
+- Find research collaborators
+- Showcase completed projects
+- Connect GitHub profiles
+- Receive AI-powered guidance
+- Monitor project health
+- Stay updated through an integrated event calendar
 
 ---
 
-# Objectives
+# Scope
 
-- Connect students with compatible teammates.
-- Encourage interdisciplinary collaboration.
-- Increase participation in hackathons and research.
-- Reduce time spent searching for team members.
-- Provide an organized collaboration ecosystem.
+Forjora is designed exclusively for educational and collaborative purposes.
+
+The platform supports:
+
+- Academic Projects
+- Personal Projects
+- Events
+- Hackathons
+- Research Paper Collaboration
+
+The platform is **not** intended to function as a freelancing marketplace or a professional hiring platform.
 
 ---
 
 # Target Audience
 
-Primary Users
+### Primary Users
 
 - College Students
 - University Students
-- Event Participants
+- Student Developers
+- Research Enthusiasts
+- Hackathon Participants
 
+### Secondary Users
+
+- Student Clubs
+- Innovation Cells
+- Technical Communities
+- College Research Groups
 
 ---
 
-# Core Features
+# Core Modules
 
 ## User Management
 
-- User Registration
-- Login
-- Authentication
-- User Profiles
-- Profile Editing
-- Skill Management
+Students can create professional profiles showcasing:
+
+- Skills
+- Interests
+- Experience
+- Availability
+- Portfolio
+- GitHub Profile
 
 ---
 
 ## Team Discovery
 
-- Search Students
-- Skill-based Filtering
-- Interest Matching
-- Availability Filtering
-- Team Recommendations
+Students can discover collaborators using filters such as:
+
+- Skills
+- Interests
+- Branch
+- Availability
+- Research Domain
 
 ---
 
-## Collaboration
+## Project Collaboration
 
-- Team Creation
-- Join Team Requests
-- Team Invitations
-- Team Dashboard
-- Member Roles
+Students can:
 
----
-
-## Communication
-
-- Real-time Chat
-- Team Discussions
-- Notifications
+- Create projects
+- Invite teammates
+- Join existing teams
+- Assign tasks
+- Track progress
+- Share project updates
 
 ---
 
-## Project Management
+## Project Showcase
 
-- Task Assignment
-- Progress Tracking
-- Deadlines
-- Team Status
+Each completed project has its own showcase page containing:
 
----
+- Description
+- Screenshots
+- Technology Stack
+- GitHub Repository
+- Live Demo (Optional)
+- Team Members
 
-## Future Features
+This helps students build a stronger portfolio while allowing others to evaluate projects before joining.
 
-- 
-
----
-
-# Technology Stack
-
-## Frontend
-
-- React.js
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Shadcn UI
+For projects which haven't been made yet can have a description and either i generated images or UI made using Figma so that people can get an idea of what to expect.
 
 ---
 
-## Backend
+## GitHub Integration
 
-- Node.js
-- Express.js
+GitHub integration is one of the core features of Forjora.
 
----
+Users can connect their GitHub account to:
 
-## Database
+- Display repositories
+- Showcase contribution history
+- Link project repositories
+- Highlight technical experience
 
-- MongoDB Atlas
-- Mongoose ODM
-
----
-
-## Authentication
-
-- JWT (JSON Web Tokens)
-- bcrypt
-- Google OAuth (Future)
+GitHub activity also contributes to the Project Health module.
 
 ---
 
-## Real-Time Communication
+## Project Health Monitor
 
-- Socket.io
+Every project receives a health score based on collaboration and development activity.
 
----
+The score considers:
 
-## Cloud Storage
+- Recent GitHub commits
+- Task completion
+- Team activity
+- Pending work
+- Deadline progress
 
-- Cloudinary
-
----
-
-## API Testing
-
-- Postman
+This helps teams monitor the overall status of their projects.
 
 ---
 
-## Version Control
+## AI Project Assistant
 
-- Git
-- GitHub
+Every project includes an AI assistant capable of providing technical guidance.
 
----
+The assistant can:
 
-## Documentation
+- Generate project roadmaps
+- Suggest technology stacks
+- Recommend architectures
+- Explain implementation concepts
+- Suggest APIs
+- Generate weekly progress summaries
+- Recommend learning resources
 
-- Markdown
-- GitHub Wiki (Optional)
-
----
-
-## UI Design
-
-- Figma
+The assistant is designed to guide students rather than replace development efforts.
 
 ---
 
-## Deployment
+## Hackathon Workspace
 
-Frontend
+Forjora provides a dedicated workspace for hackathon teams.
 
-- Vercel
+Features include:
 
-Backend
-
-- Render
-
-Database
-
-- MongoDB Atlas
+- Team dashboard
+- Shared chat
+- Event details
+- Countdown timer
+- Submission checklist(here submission mission checklist is for hackathons only) ere you can have a checklist where you can tick things you have done like
+☐ Form Team
+☐ Finalize Problem Statement
+☐ Create GitHub Repository
+☐ Assign Tasks
+☐ Prepare PPT
+☐ Deploy Project
+☐ Upload Demo Video
+☐ Submit Before Deadline
+- Reminder notifications
 
 ---
 
-# Project Architecture
+## Research Collaboration
 
-Client (React + Next.js)
+Students interested in research can discover collaborators by specifying research domains and keywords.
+
+Each research profile displays:
+
+- Research interests
+- Published papers
+- Ongoing work
+- Skills
+- Collaboration history
+
+Once connected, collaborators receive a dedicated workspace containing:
+
+- Team chat
+- Shared notes
+- File sharing
+- Progress tracking
+  1. Research Idea
         ↓
-REST API (Express.js)
+2. Find Collaborators
         ↓
-Business Logic
+3. Literature Review
         ↓
-MongoDB Database
+4. Identify Research Gap
+        ↓
+5. Define Objectives
+        ↓
+6. Methodology
+        ↓
+7. Data Collection / Experiment
+        ↓
+8. Data Analysis
+        ↓
+9. Write Paper
+        ↓
+10. Review & Revisions
+        ↓
+11. Select Journal / Conference
+        ↓
+12. Submission
+        ↓
+13. Published (Optional)
 
-Future
+Whenever a milestone is marked it will look something like this Milestone: Literature Review
 
-Socket.io
-GitHub API
-AI Recommendation Engine
+Completed by: Nikhil
 
----
+Date: 10 Sept 2026
 
-# Development Methodology
+Summary:
+Reviewed 18 papers from IEEE and Springer.
+Identified two research gaps related to AI in Public Administration.
 
-Agile Development
+### AI Research Guide
 
-Workflow
+The research module includes an AI guide that assists students throughout the research journey.
 
-Planning
-↓
+Instead of generating research papers, the AI provides guidance by:
 
-Design
-↓
-
-Development
-↓
-
-Testing
-↓
-
-Review
-↓
-
-Deployment
-
----
-
-# Expected Outcomes
-
-- Faster team formation
-- Better collaboration
-- Increased project success
-- Stronger student networking
-- Professional portfolio platform
-
----
-
-# Project Timeline
-
-Phase 1
-Planning & Documentation
-
-Phase 2
-UI/UX Design
-
-Phase 3
-Frontend Development
-
-Phase 4
-Backend Development
-
-Phase 5
-Authentication
-
-Phase 6
-Matching System
-
-Phase 7
-Communication Module
-
-Phase 8
-Testing
-
-Phase 9
-Deployment
-
-Phase 10
-Research Paper & Future Enhancements
+- Suggesting research directions
+- Recommending journals and conferences
+- Providing publication roadmaps
+- Explaining literature review techniques
+- Recommending trusted research resources
+- Helping students understand the research process
 
 ---
 
-# Team Members
+## Event Calendar
 
-| Name | Role | Responsibility |
-|------|------|----------------|
-| Nikhil | Project Lead | Architecture, Backend, Coordination |
-| Member 2 | Frontend Developer | UI Development |
-| Member 3 | Backend Developer | APIs & Database |
-| Member 4 | Full Stack Developer | Integration & Testing |
+A centralized calendar helps students manage:
 
----
+- Hackathons
+- Coding Competitions
+- Workshops
+- Seminars
+- Team Meetings
+- Project Deadlines
+- Research Milestones
 
-# Current Status
-
-✅ Planning Phase
-
-Repository Created
-
-Organization Created
-
-Documentation Started
-
-Team Formation In Progress
+Students can also create personal reminders.
 
 ---
 
-# License
+# Key Objectives
 
-MIT License
+- Simplify team formation.
+- Improve collaboration among students.
+- Encourage participation in hackathons.
+- Support research.
+- Help students build stronger portfolios.
+- Reduce project management complexity.
+- Promote continuous learning through AI-powered guidance.
 
 ---
 
-# Version
+# Development Status
 
-Version 0.1
+Current Phase: **Planning & System Design**
 
-Last Updated:
-25 July 2026
+Completed:
+
+- Project Planning
+- Repository Setup
+- Documentation Structure
+- Feature Planning
+
+Upcoming:
+
+- System Architecture
+- Database Design
+- API Design
+- Frontend Development
+- Backend Development
+
+---
+
+# Project Motto
+
+> **Build Together. Learn Together. Grow Together.**
