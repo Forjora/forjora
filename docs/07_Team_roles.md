@@ -1,252 +1,459 @@
-# Team Roles
+# Team Roles & Responsibilities
 
-This document defines the responsibilities, ownership, and expectations of every team member involved in the development of **Forjora**. Clear role distribution helps improve collaboration, reduce development conflicts, and ensure accountability throughout the project lifecycle.
+## 1. Team Overview
 
----
+Forjora is developed by a five-member team, with each member responsible for a major functional area of the platform. The responsibilities are divided according to technical specialization while maintaining collaboration between modules to ensure smooth system integration.
 
-# Team Overview
-
-| Member | Role | Primary Responsibility | Difficulty |
-|---------|------|------------------------|------------|
-| Nikhil Kumar | Project Lead & Frontend Manager | Project Management, Frontend Architecture, UI Development, Code Review | ⭐⭐⭐⭐⭐ |
-| Member 2 | Frontend Developer | UI Components, Dashboard, Responsive Design, Frontend Integration | ⭐⭐⭐⭐☆ |
-| Member 3 | Backend Developer | APIs, Authentication, Business Logic, Chat System | ⭐⭐⭐⭐⭐ |
-| Member 4 | AI & Integrations Developer | GitHub Integration, AI Assistant, Project Health, External APIs | ⭐⭐⭐⭐⭐ |
-| Member 5 | Database & DevOps Engineer | Database Design, Deployment, Testing, Cloud Services | ⭐⭐⭐⭐☆ |
+| Member   | Name    | Role                                       | Difficulty |
+| -------- | ------- | ------------------------------------------ | ---------: |
+| Member 1 | Nikhil  | Frontend Manager                           |       8/10 |
+| Member 2 | Vaisakh | Authentication & Backend                   |     7.5/10 |
+| Member 3 | Sugam   | Project Collaboration & GitHub Integration |   9.5/10 ⭐ |
+| Member 4 | Kuldeep | Communication & Hackathon Workspace        |     8.5/10 |
+| Member 5 | Harsh   | AI & Research Collaboration                |       9/10 |
 
 ---
 
-# Member Responsibilities
+# 2. Member 1 — Nikhil
 
-## Nikhil Kumar
-### Role
-**Project Lead & Frontend Manager**
+## Role
 
-### Responsibilities
+**Frontend Manager**
 
-- Lead the overall development of the project.
-- Plan project milestones and development phases.
-- Design the frontend architecture.
-- Review UI consistency across all modules.
-- Assign tasks to team members.
-- Review pull requests before merging.
-- Resolve merge conflicts.
-- Maintain project documentation.
-- Coordinate frontend-backend integration.
-- Ensure deadlines are met.
+## Difficulty
 
-### Technologies
+**8/10**
 
-- React.js
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Shadcn UI
-- Git & GitHub
+## Responsibilities
 
----
+Nikhil is responsible for the overall frontend architecture, user interface, user experience, and integration of the frontend with backend services.
 
-## Member 2
-### Role
-**Frontend Developer**
+### Primary Responsibilities
 
-### Responsibilities
+* Design the overall UI/UX of Forjora.
+* Develop reusable and scalable frontend components.
+* Implement responsive layouts for different screen sizes.
+* Build major frontend pages and dashboards.
+* Maintain frontend design consistency across all modules.
+* Integrate backend APIs with the frontend.
+* Handle frontend state management where required.
+* Implement loading, error, and empty states.
+* Coordinate frontend requirements with all other team members.
+* Ensure smooth integration of authentication, projects, chat, hackathons, research, and AI features.
+* Review frontend contributions from other team members.
+* Maintain frontend coding standards and component structure.
 
-- Develop reusable UI components.
-- Build dashboard pages.
-- Develop Profile module.
-- Develop Project Showcase pages.
-- Develop Research module interface.
-- Develop Hackathon pages.
-- Connect frontend with backend APIs.
-- Improve responsiveness.
-- Fix frontend bugs.
+### Key Modules
 
-### Technologies
+* Main Dashboard
+* User Profile
+* Team Discovery Interface
+* Project Interface
+* Hackathon Interface
+* Research Interface
+* AI Assistant Interface
+* Calendar Interface
+* Navigation and Shared Components
 
-- React.js
-- Next.js
-- TypeScript
-- Tailwind CSS
+### Collaboration Requirements
+
+Nikhil must coordinate closely with:
+
+* **Vaisakh** for authentication and backend APIs.
+* **Sugam** for project and GitHub-related interfaces.
+* **Kuldeep** for chat, notifications, hackathon, and calendar interfaces.
+* **Harsh** for AI and research interfaces.
 
 ---
 
-## Member 3
-### Role
-**Backend Developer**
+# 3. Member 2 — Vaisakh
 
-### Responsibilities
+## Role
 
-- Develop REST APIs.
-- Implement Authentication.
-- Implement Authorization.
-- Build Project APIs.
-- Build Team APIs.
-- Build Research APIs.
-- Implement Socket.io chat.
-- Develop Notification System.
-- Handle server-side validation.
+**Authentication & Backend Developer**
 
-### Technologies
+## Difficulty
 
-- Node.js
-- Express.js
-- JWT
-- bcrypt
-- Socket.io
+**7.5/10**
 
----
+## Responsibilities
 
-## Member 4
-### Role
-**AI & Integrations Developer**
+Vaisakh is responsible for the backend foundation of Forjora, including authentication, user management, database integration, security, and core APIs.
 
-### Responsibilities
+### Primary Responsibilities
 
-- Integrate GitHub API.
-- Build GitHub Profile Integration.
-- Develop Project Health Monitor.
-- Integrate Gemini AI.
-- Build AI Project Assistant.
-- Build AI Research Guide.
-- Generate Weekly Project Summaries.
-- Integrate external APIs.
+* Design and implement the backend architecture.
+* Implement user registration and login.
+* Develop authentication and authorization systems.
+* Implement JWT-based authentication.
+* Manage user profiles and account information.
+* Design and maintain database schemas.
+* Implement secure password handling.
+* Develop core REST APIs.
+* Implement validation and error handling.
+* Configure environment variables and backend security.
+* Manage database connectivity.
+* Implement role and permission handling where required.
+* Provide APIs required by other modules.
+* Maintain backend coding standards.
 
-### Technologies
+### Key Modules
 
-- GitHub REST API
-- Gemini API
-- Node.js
-- Express.js
+* Authentication
+* User Management
+* Profile Management
+* Database Integration
+* Core APIs
+* Authorization
+* Security
 
----
+### Collaboration Requirements
 
-## Member 5
-### Role
-**Database & DevOps Engineer**
+Vaisakh must coordinate with:
 
-### Responsibilities
-
-- Design MongoDB collections.
-- Create database schemas.
-- Develop Mongoose models.
-- Configure Cloudinary.
-- Optimize database queries.
-- Perform testing.
-- Handle deployment.
-- Configure production environment.
-- Monitor application performance.
-
-### Technologies
-
-- MongoDB Atlas
-- Mongoose
-- Cloudinary
-- Render
-- Vercel
+* **Nikhil** for frontend API integration.
+* **Sugam** for project and GitHub-related APIs.
+* **Kuldeep** for chat, notifications, and hackathon APIs.
+* **Harsh** for AI and research-related APIs.
 
 ---
 
-# Shared Responsibilities
+# 4. Member 3 — Sugam
 
-Every team member is expected to:
+## Role
 
-- Attend weekly meetings.
-- Update assigned tasks regularly.
-- Follow coding standards.
-- Write clean and maintainable code.
-- Test features before submission.
-- Create meaningful Git commits.
-- Participate in code reviews.
-- Report blockers immediately.
-- Maintain proper documentation for their modules.
+**Project Collaboration & GitHub Integration Developer**
+
+## Difficulty
+
+**9.5/10 ⭐**
+
+## Responsibilities
+
+Sugam is responsible for the most interconnected functional area of Forjora: project collaboration, team management, task management, Project Health, and GitHub integration.
+
+### Primary Responsibilities
+
+* Implement project creation and management.
+* Develop project discovery functionality.
+* Implement team creation and team management.
+* Implement project invitations and joining mechanisms.
+* Develop task creation and assignment.
+* Implement task progress tracking.
+* Develop project activity tracking.
+* Implement Project Health calculation and logic.
+* Integrate GitHub APIs.
+* Connect GitHub repositories with Forjora projects.
+* Retrieve relevant GitHub activity.
+* Track repository activity such as commits and contributions.
+* Integrate GitHub activity with Project Health.
+* Develop project showcase functionality.
+* Support project screenshots, technology stacks, repositories, and live demos.
+* Implement project-related backend APIs.
+
+### Key Modules
+
+* Project Management
+* Team Management
+* Task Management
+* Project Showcase
+* GitHub Integration
+* Project Health
+* Project Activity
+
+### Project Health
+
+The Project Health system may consider:
+
+* Recent GitHub commits
+* Task completion
+* Team activity
+* Pending tasks
+* Project deadlines
+* Development activity
+
+The system generates an overall project health indicator to help teams understand the current state of their project.
+
+### Collaboration Requirements
+
+Sugam must coordinate closely with:
+
+* **Nikhil** for project UI and GitHub interface.
+* **Vaisakh** for project-related backend infrastructure and database APIs.
+* **Kuldeep** for project communication and activity notifications.
+* **Harsh** for AI-powered project guidance and weekly reports.
 
 ---
 
-# Module Ownership
+# 5. Member 4 — Kuldeep
 
-| Module | Owner |
-|----------|--------|
-| Documentation | Nikhil Kumar |
-| Frontend Architecture | Nikhil Kumar |
-| UI Components | Member 2 |
-| Authentication | Member 3 |
-| Project Collaboration | Member 3 |
-| Team Discovery | Member 3 |
-| Real-Time Chat | Member 3 |
-| GitHub Integration | Member 4 |
-| AI Project Assistant | Member 4 |
-| AI Research Guide | Member 4 |
-| Project Health Monitor | Member 4 |
-| Event Calendar | Member 2 |
-| Research Collaboration | Member 3 & Member 4 |
-| Database Design | Member 5 |
-| Deployment | Member 5 |
-| Testing | Member 5 (Supported by all members) |
+## Role
+
+**Communication & Hackathon Workspace Developer**
+
+## Difficulty
+
+**8.5/10**
+
+## Responsibilities
+
+Kuldeep is responsible for real-time communication, notifications, hackathon collaboration, reminders, and calendar-related functionality.
+
+### Primary Responsibilities
+
+* Implement real-time team communication using Socket.io.
+* Develop team and project chat.
+* Implement real-time messaging.
+* Develop notification functionality.
+* Implement unread message and notification indicators.
+* Develop the Hackathon Workspace.
+* Implement hackathon team dashboards.
+* Develop hackathon countdown timers.
+* Implement hackathon-specific checklists.
+* Develop reminders and deadline notifications.
+* Integrate hackathon events with the calendar.
+* Implement team meeting and project deadline events.
+* Support real-time updates where required.
+
+### Hackathon Checklist
+
+The hackathon workspace should support a dedicated submission checklist such as:
+
+* ☐ Form Team
+* ☐ Finalize Problem Statement
+* ☐ Create GitHub Repository
+* ☐ Assign Tasks
+* ☐ Prepare PPT
+* ☐ Deploy Project
+* ☐ Upload Demo Video
+* ☐ Submit Before Deadline
+
+### Key Modules
+
+* Real-Time Chat
+* Notifications
+* Hackathon Workspace
+* Hackathon Dashboard
+* Countdown Timer
+* Reminders
+* Calendar Integration
+
+### Collaboration Requirements
+
+Kuldeep must coordinate with:
+
+* **Nikhil** for chat, notification, hackathon, and calendar UI.
+* **Vaisakh** for communication and notification APIs.
+* **Sugam** for project/team communication integration.
+* **Harsh** where AI-generated reminders or reports interact with communication features.
 
 ---
 
-# Git Workflow
+# 6. Member 5 — Harsh
 
-Development will follow a feature-branch workflow.
+## Role
 
+**AI & Research Collaboration Developer**
+
+## Difficulty
+
+**9/10**
+
+## Responsibilities
+
+Harsh is responsible for integrating AI-powered functionality and developing the research collaboration ecosystem within Forjora.
+
+### Primary Responsibilities
+
+* Integrate the Gemini API.
+* Develop AI-powered assistants.
+* Implement prompt engineering and AI workflows.
+* Develop the AI Project Assistant.
+* Implement AI-generated project roadmaps.
+* Implement technology and architecture recommendations.
+* Develop weekly AI-generated work reports.
+* Develop the Research Collaboration module.
+* Implement research profiles and research interests.
+* Develop research collaboration workflows.
+* Implement research milestone tracking.
+* Develop the AI Research Guide.
+* Provide research process guidance.
+* Recommend research directions and resources.
+* Provide guidance regarding journals and conferences.
+* Ensure AI guidance does not simply generate complete research papers.
+
+### Research Workflow
+
+The research collaboration module should support the following journey:
+
+```text
+Research Idea
+      ↓
+Find Collaborators
+      ↓
+Literature Review
+      ↓
+Identify Research Gap
+      ↓
+Define Objectives
+      ↓
+Methodology
+      ↓
+Data Collection / Experiment
+      ↓
+Data Analysis
+      ↓
+Write Paper
+      ↓
+Review & Revisions
+      ↓
+Select Journal / Conference
+      ↓
+Submission
+      ↓
+Published (Optional)
 ```
-main
-│
-└── develop
-      │
-      ├── feature/frontend
-      ├── feature/backend
-      ├── feature/github
-      ├── feature/ai
-      ├── feature/database
-      ├── feature/chat
-      └── feature/research
-```
 
-Direct commits to the **main** branch are not allowed.
+### Key Modules
 
----
+* AI Project Assistant
+* AI Research Guide
+* Gemini API Integration
+* Weekly Work Report Generator
+* Research Profiles
+* Research Collaboration
+* Research Journey Tracking
+* Research Milestones
 
-# Development Workflow
+### Collaboration Requirements
 
-1. Select an assigned task.
-2. Create a feature branch.
-3. Develop the feature.
-4. Test the implementation locally.
-5. Commit changes with meaningful commit messages.
-6. Create a Pull Request.
-7. Code Review by Project Lead.
-8. Merge into the **develop** branch.
-9. Merge into **main** after successful testing.
+Harsh must coordinate with:
+
+* **Nikhil** for AI and research interfaces.
+* **Vaisakh** for AI and research APIs and database integration.
+* **Sugam** for AI features related to project activity and Project Health.
+* **Kuldeep** for reports, reminders, notifications, and collaboration features.
 
 ---
 
-# Communication Guidelines
+# 7. Cross-Team Responsibilities
 
-The team should communicate regularly regarding:
+Although each member owns a specific module, Forjora requires continuous collaboration between all members.
 
-- Feature implementation
-- Progress updates
-- Bug reports
-- Pull requests
-- Integration issues
-- Sprint planning
+### Frontend ↔ Backend
 
-Weekly meetings should be conducted to review completed work, discuss blockers, and plan upcoming development.
+**Nikhil ↔ Vaisakh**
+
+Responsible for:
+
+* API integration
+* Authentication flow
+* Data handling
+* Error handling
+* API contracts
+
+### Frontend ↔ Project/GitHub
+
+**Nikhil ↔ Sugam**
+
+Responsible for:
+
+* Project dashboards
+* Project creation interfaces
+* Team management UI
+* GitHub integration UI
+* Project Health visualization
+
+### Frontend ↔ Communication/Hackathons
+
+**Nikhil ↔ Kuldeep**
+
+Responsible for:
+
+* Chat interface
+* Notifications
+* Hackathon workspace
+* Calendar
+* Countdown and checklist UI
+
+### Frontend ↔ AI/Research
+
+**Nikhil ↔ Harsh**
+
+Responsible for:
+
+* AI assistant interface
+* Research workspace
+* Research journey UI
+* AI-generated reports
+* Research milestone interfaces
+
+### Backend ↔ All Modules
+
+**Vaisakh ↔ Sugam/Kuldeep/Harsh**
+
+Responsible for:
+
+* API contracts
+* Database integration
+* Authentication
+* Data validation
+* Security
+* Module-to-module communication
 
 ---
 
-# Responsibility Principles
+# 8. Module Ownership Summary
 
-- Every member owns their assigned modules.
-- Team members should assist each other whenever integration between modules is required.
-- Code quality is the responsibility of every contributor.
-- Documentation should be updated whenever significant changes are made.
-- Collaboration and communication are essential for successful project completion.
+| Module                 | Primary Owner | Supporting Member |
+| ---------------------- | ------------- | ----------------- |
+| Frontend Architecture  | Nikhil        | All               |
+| UI/UX                  | Nikhil        | All               |
+| Authentication         | Vaisakh       | Nikhil            |
+| User Management        | Vaisakh       | Nikhil            |
+| Core Backend           | Vaisakh       | All               |
+| Project Management     | Sugam         | Nikhil, Vaisakh   |
+| Team Management        | Sugam         | Nikhil, Vaisakh   |
+| Task Management        | Sugam         | Nikhil            |
+| GitHub Integration     | Sugam         | Nikhil, Vaisakh   |
+| Project Health         | Sugam         | Harsh, Nikhil     |
+| Real-Time Chat         | Kuldeep       | Nikhil, Vaisakh   |
+| Notifications          | Kuldeep       | Nikhil, Vaisakh   |
+| Hackathon Workspace    | Kuldeep       | Nikhil, Vaisakh   |
+| Calendar               | Kuldeep       | Nikhil, Vaisakh   |
+| AI Assistant           | Harsh         | Nikhil, Vaisakh   |
+| Weekly AI Reports      | Harsh         | Sugam, Kuldeep    |
+| Research Collaboration | Harsh         | Nikhil, Vaisakh   |
+| Research Journey       | Harsh         | Nikhil            |
+| AI Research Guide      | Harsh         | Nikhil            |
 
 ---
 
-# Project Motto
+# 9. Team Development Principles
 
-> **Build Together. Learn Together. Grow Together.**
+All team members should follow these principles during development:
+
+* Maintain clear ownership of assigned modules.
+* Communicate API and schema changes before implementation.
+* Follow the project's coding standards.
+* Use Git branches for feature development.
+* Create meaningful commit messages.
+* Review code before merging major changes.
+* Test features before integration.
+* Avoid breaking existing functionality.
+* Keep documentation updated when major changes are introduced.
+* Coordinate with the frontend manager before making major UI or API changes.
+* Ensure all modules integrate consistently with the overall Forjora architecture.
+
+---
+
+# 10. Responsibility Philosophy
+
+Forjora follows a **module ownership with team collaboration** approach.
+
+Each member is primarily responsible for developing and maintaining their assigned module, while major features are developed through coordination between the relevant members.
+
+The goal is not only to divide the workload but to ensure that every major component of Forjora has a clear owner while maintaining a unified and integrated platform.
+
+> **One team. Clear ownership. Shared responsibility.**
+
