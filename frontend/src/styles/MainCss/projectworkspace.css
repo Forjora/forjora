@@ -1,120 +1,210 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.dashboard {
-    min-height: 100vh;
+/* =========================
+   PROJECT WORKSPACE
+========================= */
+
+.project-workspace {
     width: 100%;
-    display: flex;
-    background-color: #f8f9fc;
-    font-family: sans-serif;
+
+    min-height: 100%;
+
+    padding: var(--space-2xl);
+
+    background-color: var(--bg-primary);
+
+    color: var(--text-primary);
 }
-/* SIDEBAR */
-.sidebar {
-    width: 220px;
-    min-height: 100vh;
-    background-color: white;
-    border-right: 1px solid #e5e7eb;
-    display: flex;
-    flex-direction: column;
-    padding: 25px 15px;
+
+
+/* =========================
+   HEADER
+========================= */
+
+.project-workspace-header {
+    margin-bottom: var(--space-2xl);
 }
-.dashboard-logo {
-    font-size: 25px;
-    margin-bottom: 40px;
-    padding-left: 15px;
+
+.project-workspace-header h1 {
+    margin-bottom: var(--space-sm);
+
+    font-size: 28px;
 }
-/* SIDEBAR NAVIGATION */
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+
+.project-workspace-header p {
+    color: var(--text-muted);
+
+    font-size: var(--font-sm);
 }
-.sidebar-nav a {
-    text-decoration: none;
-    color: #374151;
-    padding: 12px 15px;
-    border-radius: 8px;
-    font-size: 14px;
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.project-workspace-search {
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 12px var(--space-md);
+
+    margin-bottom: var(--space-2xl);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
+
+    outline: none;
+
+    background-color: var(--bg-secondary);
+
+    color: var(--text-primary);
+
+    font-size: var(--font-md);
 }
-.sidebar-nav a:hover {
-    color: #4f32e8;
+
+.project-workspace-search:focus {
+    border-color: var(--primary-color);
 }
-.sidebar-nav a:hover{
-    background-color: #f5f3ff;
+
+
+/* =========================
+   PROJECT GRID
+========================= */
+
+.project-workspace-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+
+    gap: var(--space-lg);
 }
-.sidebar-nav a{
-    display: flex;
-    gap:20px;
-    font-size:15px;
+
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-card {
+    padding: var(--space-xl);
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-lg);
+
+    transition: var(--transition-normal);
 }
-/* LOGOUT */
-.Logout-btn {
-    padding: 12px 15px;
+
+.project-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+    margin-bottom: var(--space-sm);
+
+    color: var(--text-primary);
+}
+
+.project-card p {
+    color: var(--text-muted);
+
+    font-size: var(--font-sm);
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PROJECT BUTTON
+========================= */
+
+.project-card button {
+    margin-top: var(--space-md);
+
+    padding: 10px 15px;
+
     border: none;
-    background: transparent;
-    text-align: left;
-    color: #ef4444;
-    font-size: 14px;
-    cursor: pointer;
-}
-.Logout-btn:hover {
-    background-color: #fef2f2;
-    border-radius: 8px;
-}
-.dashboard-logout-line{
-    display:block;
-    height:1px;
-    background-color:#e5e7eb;
-}
-.Dashboard-logout-divider{
-    margin-top:auto;
-    padding-bottom:10px;
-}
-/* RIGHT SIDE */
-.dashboard-content {
-    flex: 1;
-    min-width: 0;
-}
-/* TOPBAR */
-.topbar {
-    height: 65px;
-    background-color: white;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width:calc(100vw - 220px);
-    padding: 0 25px;
-}
-/* TOPBAR ICONS */
-.topbar-icons {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-.topbar-icons button {
-    border: none;
-    background: transparent;
-    font-size: 20px;
-    cursor: pointer;
-}
-/* PROFILE */
-.topbar-icons .profile-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #4f32e8;
+
+    border-radius: var(--radius-md);
+
+    background-color: var(--primary-color);
+
     color: white;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    cursor: pointer;
+
+    transition: var(--transition-fast);
 }
-/* MAIN CONTENT */
-.main-content {
-    min-height: calc(100vh - 65px);
-    padding: 30px;
+
+.project-card button:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dashboard.dark-mode .project-workspace {
+    background-color: var(--dark-bg-primary);
+
+    color: var(--dark-text-primary);
+}
+
+.dashboard.dark-mode .project-workspace-header p {
+    color: var(--dark-text-secondary);
+}
+
+
+.dashboard.dark-mode .project-workspace-search {
+    background-color: var(--dark-bg-secondary);
+
+    border-color: var(--dark-border);
+
+    color: var(--dark-text-primary);
+}
+
+
+.dashboard.dark-mode .project-card {
+    background-color: var(--dark-bg-secondary);
+
+    border-color: var(--dark-border);
+}
+
+
+.dashboard.dark-mode .project-card h3 {
+    color: var(--dark-text-primary);
+}
+
+
+.dashboard.dark-mode .project-card p {
+    color: var(--dark-text-secondary);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .project-workspace {
+        padding: var(--space-lg);
+    }
+
+    .project-workspace-header h1 {
+        font-size: 24px;
+    }
+
+    .project-workspace-grid {
+        grid-template-columns: 1fr;
+    }
+
 }

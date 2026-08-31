@@ -1,120 +1,180 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.dashboard {
-    min-height: 100vh;
+/* =========================
+   SETTINGS
+========================= */
+
+.settings-page {
     width: 100%;
+
+    min-height: 100%;
+
+    padding: var(--space-2xl);
+
+    background-color: var(--bg-primary);
+
+    color: var(--text-primary);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.settings-header {
+    margin-bottom: var(--space-2xl);
+}
+
+
+.settings-header h1 {
+    font-size: 28px;
+
+    margin-bottom: var(--space-sm);
+}
+
+
+.settings-header p {
+    color: var(--text-muted);
+
+    font-size: var(--font-sm);
+}
+
+
+/* =========================
+   SETTINGS CARD
+========================= */
+
+.settings-card {
+    max-width: 800px;
+
+    padding: var(--space-xl);
+
+    margin-bottom: var(--space-lg);
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-lg);
+}
+
+
+.settings-card h2 {
+    margin-bottom: var(--space-lg);
+
+    font-size: var(--font-xl);
+}
+
+
+/* =========================
+   SETTING ROW
+========================= */
+
+.setting-row {
     display: flex;
-    background-color: #f8f9fc;
-    font-family: sans-serif;
-}
-/* SIDEBAR */
-.sidebar {
-    width: 220px;
-    min-height: 100vh;
-    background-color: white;
-    border-right: 1px solid #e5e7eb;
-    display: flex;
-    flex-direction: column;
-    padding: 25px 15px;
-}
-.dashboard-logo {
-    font-size: 25px;
-    margin-bottom: 40px;
-    padding-left: 15px;
-}
-/* SIDEBAR NAVIGATION */
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.sidebar-nav a {
-    text-decoration: none;
-    color: #374151;
-    padding: 12px 15px;
-    border-radius: 8px;
-    font-size: 14px;
-}
-.sidebar-nav a:hover {
-    color: #4f32e8;
-}
-.sidebar-nav a:hover{
-    background-color: #f5f3ff;
-}
-.sidebar-nav a{
-    display: flex;
-    gap:20px;
-    font-size:15px;
-}
-/* LOGOUT */
-.Logout-btn {
-    padding: 12px 15px;
-    border: none;
-    background: transparent;
-    text-align: left;
-    color: #ef4444;
-    font-size: 14px;
-    cursor: pointer;
-}
-.Logout-btn:hover {
-    background-color: #fef2f2;
-    border-radius: 8px;
-}
-.dashboard-logout-line{
-    display:block;
-    height:1px;
-    background-color:#e5e7eb;
-}
-.Dashboard-logout-divider{
-    margin-top:auto;
-    padding-bottom:10px;
-}
-/* RIGHT SIDE */
-.dashboard-content {
-    flex: 1;
-    min-width: 0;
-}
-/* TOPBAR */
-.topbar {
-    height: 65px;
-    background-color: white;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
+
+    justify-content: space-between;
+
     align-items: center;
-    justify-content: flex-end;
-    width:calc(100vw - 220px);
-    padding: 0 25px;
+
+    gap: var(--space-lg);
+
+    padding: var(--space-lg) 0;
+
+    border-bottom: 1px solid var(--border-color);
 }
-/* TOPBAR ICONS */
-.topbar-icons {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+
+
+.setting-row:last-child {
+    border-bottom: none;
 }
-.topbar-icons button {
+
+
+.setting-info h3 {
+    margin-bottom: 5px;
+
+    font-size: var(--font-md);
+}
+
+
+.setting-info p {
+    color: var(--text-muted);
+
+    font-size: var(--font-sm);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.settings-button {
+    padding: 10px 16px;
+
     border: none;
-    background: transparent;
-    font-size: 20px;
-    cursor: pointer;
-}
-/* PROFILE */
-.topbar-icons .profile-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #4f32e8;
+
+    border-radius: var(--radius-md);
+
+    background-color: var(--primary-color);
+
     color: white;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    cursor: pointer;
+
+    font-size: var(--font-sm);
 }
-/* MAIN CONTENT */
-.main-content {
-    min-height: calc(100vh - 65px);
-    padding: 30px;
+
+
+.settings-button:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dashboard.dark-mode .settings-page {
+    background-color: var(--dark-bg-primary);
+
+    color: var(--dark-text-primary);
+}
+
+
+.dashboard.dark-mode .settings-header p {
+    color: var(--dark-text-secondary);
+}
+
+
+.dashboard.dark-mode .settings-card {
+    background-color: var(--dark-bg-secondary);
+
+    border-color: var(--dark-border);
+}
+
+
+.dashboard.dark-mode .setting-row {
+    border-bottom-color: var(--dark-border);
+}
+
+
+.dashboard.dark-mode .setting-info p {
+    color: var(--dark-text-secondary);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .settings-page {
+        padding: var(--space-lg);
+    }
+
+    .setting-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
 }

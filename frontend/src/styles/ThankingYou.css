@@ -1,84 +1,160 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* =====================================================
+   THANK YOU PAGE
+===================================================== */
+
 .Thanking-main {
     min-height: 100vh;
+
     width: 100%;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
-    padding: 20px;
+
+    padding: var(--space-lg);
+
+    background-color: var(--bg-primary);
 }
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
 .ThankingYou-Container {
     width: 100%;
-    max-width: 1000px; 
+
+    max-width: 1000px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     text-align: center;
+
     margin: auto;
 }
+
+
+/* =====================================================
+   THANK YOU TEXT
+===================================================== */
+
 .Shukriya {
     font-size: 50px;
+
     line-height: 1.2;
+
+    color: var(--text-primary);
 }
+
+
+/* =====================================================
+   HOME BUTTON CONTAINER
+===================================================== */
+
 .Home-page-button-container {
     margin-top: 50px;
 }
+
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
+
 .HomePage-return {
     width: 300px;
-    padding: 15px;
+
+    padding: var(--space-md);
+
     border: none;
+
     outline: none;
-    border-radius: 10px;
-    background-color: rgb(0, 0, 255);
+
+    border-radius: var(--radius-lg);
+
+    background-color: var(--primary-blue);
+
     color: white;
+
     font-weight: bold;
-    font-size: 15px;
+
+    font-size: var(--font-md);
+
     cursor: pointer;
+
+    transition: var(--transition-fast);
 }
-/* ========================= */
-/* TABLET */
-/* ========================= */
+
+
+.HomePage-return:hover {
+    background-color: var(--primary-blue-hover);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
 @media (max-width: 768px) {
+
     .Shukriya {
         font-size: 40px;
     }
+
     .Home-page-button-container {
         margin-top: 35px;
     }
 }
-/* ========================= */
-/* MOBILE */
-/* ========================= */
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media (max-width: 500px) {
+
     .Thanking-main {
-        padding: 20px;
+        padding: var(--space-lg);
     }
+
     .Shukriya {
         font-size: 32px;
+
         line-height: 1.3;
     }
+
     .Home-page-button-container {
         width: 100%;
-        margin-top: 30px;
+
+        margin-top: var(--space-2xl);
     }
+
     .HomePage-return {
         width: 100%;
+
         max-width: 300px;
     }
 }
-/* ========================= */
-/* SMALL MOBILE */
-/* ========================= */
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
 @media (max-width: 350px) {
+
     .Shukriya {
         font-size: 27px;
     }
+
     .HomePage-return {
-        font-size: 14px;
+        font-size: var(--font-sm);
+
         padding: 13px;
     }
 }
