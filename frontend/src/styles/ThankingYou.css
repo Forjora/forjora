@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Thanking-main {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.ThankingYou-Container {
+    width: 100%;
+    max-width: 1000px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+.Shukriya {
+    font-size: 50px;
+    line-height: 1.2;
+}
+.Home-page-button-container {
+    margin-top: 50px;
+}
+.HomePage-return {
+    width: 300px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 255);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+/* ========================= */
+/* TABLET */
+/* ========================= */
+@media (max-width: 768px) {
+    .Shukriya {
+        font-size: 40px;
+    }
+    .Home-page-button-container {
+        margin-top: 35px;
+    }
+}
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media (max-width: 500px) {
+    .Thanking-main {
+        padding: 20px;
+    }
+    .Shukriya {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+    .Home-page-button-container {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .HomePage-return {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+@media (max-width: 350px) {
+    .Shukriya {
+        font-size: 27px;
+    }
+    .HomePage-return {
+        font-size: 14px;
+        padding: 13px;
+    }
+}

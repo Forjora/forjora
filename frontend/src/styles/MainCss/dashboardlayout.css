@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dashboard {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: #f8f9fc;
+    font-family: sans-serif;
+}
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    min-height: 100vh;
+    background-color: white;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+}
+.dashboard-logo {
+    font-size: 25px;
+    margin-bottom: 40px;
+    padding-left: 15px;
+}
+/* SIDEBAR NAVIGATION */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.sidebar-nav a {
+    text-decoration: none;
+    color: #374151;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.sidebar-nav a:hover {
+    color: #4f32e8;
+}
+.sidebar-nav a:hover{
+    background-color: #f5f3ff;
+}
+.sidebar-nav a{
+    display: flex;
+    gap:20px;
+    font-size:15px;
+}
+.sidebar-nav a.active{
+     background-color: #f5f3ff;
+    color: #4f32e8;
+}
+.sidebar{
+ transition: width 0.3s ease;
+}
+.sidebar-closed .sidebar {
+    width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+}
+.sidebar-closed .sidebar > * {
+    opacity: 0;
+}
+.sidebar-toggle {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* LOGOUT */
+.Logout-btn {
+    padding: 12px 15px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    color: #ef4444;
+    font-size: 14px;
+    cursor: pointer;
+}
+.Logout-btn:hover {
+    background-color: #fef2f2;
+    border-radius: 8px;
+}
+.dashboard-logout-line{
+    display:block;
+    height:1px;
+    background-color:#e5e7eb;
+}
+.Dashboard-logout-divider{
+    margin-top:auto;
+    padding-bottom:10px;
+}
+/* RIGHT SIDE */
+.dashboard-content {
+    flex: 1;
+    min-width: 0;
+}
+/* TOPBAR */
+.topbar {
+    height: 65px;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 25px;
+}
+/* TOPBAR ICONS */
+.topbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.topbar-icons button {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* PROFILE */
+.topbar-icons .profile-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4f32e8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* MAIN CONTENT */
+.main-content {
+    min-height: calc(100vh - 65px);
+    padding: 30px;
+}
+.main-content{
+    text-align:center;
+}
+
+/* Darkmode css */
+.dashboard.dark-mode {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+/* SIDEBAR */
+.dashboard.dark-mode .sidebar {
+    background-color: #1f2937;
+    border-right: 1px solid #374151;
+}
+
+.dashboard.dark-mode .dashboard-logo {
+    color: #f9fafb;
+}
+
+/* SIDEBAR LINKS */
+.dashboard.dark-mode .sidebar-nav a {
+    color: #d1d5db;
+}
+
+.dashboard.dark-mode .sidebar-nav a:hover {
+    background-color: #374151;
+    color: #a5b4fc;
+}
+
+/* SELECTED / ACTIVE LINK */
+.dashboard.dark-mode .sidebar-nav a.active {
+    background-color: #312e81;
+    color: #c7d2fe;
+}
+
+/* LOGOUT DIVIDER */
+.dashboard.dark-mode .dashboard-logout-line {
+    background-color: #374151;
+}
+
+/* LOGOUT BUTTON */
+.dashboard.dark-mode .Logout-btn {
+    color: #f87171;
+}
+
+.dashboard.dark-mode .Logout-btn:hover {
+    background-color: #451a1a;
+}
+
+/* RIGHT SIDE */
+.dashboard.dark-mode .dashboard-content {
+    background-color: #111827;
+}
+
+/* TOPBAR */
+.dashboard.dark-mode .topbar {
+    background-color: #1f2937;
+    border-bottom: 1px solid #374151;
+}
+
+/* TOPBAR BUTTONS */
+.dashboard.dark-mode .topbar-icons button {
+    color: #f9fafb;
+}
+
+.dashboard.dark-mode .topbar-icons button:hover {
+    color: #a5b4fc;
+}
+
+/* PROFILE */
+.dashboard.dark-mode .topbar-icons .profile-btn {
+    background-color: #4f32e8;
+    color: white;
+}
+
+/* MAIN CONTENT */
+.dashboard.dark-mode .main-content {
+    background-color: #111827;
+    color: #f9fafb;
+}

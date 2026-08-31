@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.login-main {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f4f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.login-container {
+    width: 100%;
+    max-width: 900px;
+    min-height: 550px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    overflow: hidden;
+}
+.login-first-sec {
+    width: 50%;
+    background-color: #F5F3FF;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.Footer-main {
+    font-family: sans-serif;
+}
+.login-first-sec-desc {
+    margin-bottom: 30px;
+}
+.footer-welcome {
+    margin-bottom: 10px;
+}
+.footer-desc {
+    font-size: 20px;
+}
+.teampanelimg {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+.login-second-sec {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+}
+.forjora-2-first {
+    margin-bottom: 40px;
+    text-align: center;
+}
+.forjora-2-first h1 {
+    margin-bottom: 10px;
+}
+.forjora-2-first p {
+    color: #6b7280;
+    font-size: 15px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-Email,
+.footer-Password {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.Password-box,
+.Email-box {
+    width: 100%;
+    height: 46px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    padding: 0 15px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.Password-box:focus,
+.Email-box:focus {
+    border-color: #4f32e8;
+}
+.footer-login {
+    height: 46px;
+    background-color: rgb(0, 0, 225);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.login-conatiner-footer{
+    position:relative;
+}
+.email-icon{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-77%);
+    color: #6b7280;
+}
+.Email-box,.Password-box{
+    padding:0px 15px 0px 45px;
+}
+.login-password-container{
+    position:relative
+}
+.lock-icon{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-90%);
+    color: #6b7280;
+}
+.eye-icon{
+    position:absolute;
+    right:15px;
+    bottom:50%;
+    transform: translateY(25%);
+    color: #6b7280;
+}
+.forgot-password{
+    width:100%;
+    display:flex;
+    justify-content: right;
+}
+.forgot-password a{
+    color:rgb(0, 0, 225);
+    font-size:15px;
+    font-family:sans-serif;
+}
+.button-divider{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin: 10px 0px;
+}
+.button-divider span{
+    flex:1;
+    background-color:#4f5053;
+    height:1px;
+}
+.or-divider p {
+    color: #4f5053;
+    font-size: 14px;
+}
+.footer-github {
+    height: 46px;
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    border:1px solid black;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.fa-github{
+    margin-left:10px;
+    font-size:22px;
+}
+.footer-last{
+    color: #4f5053;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    margin-top:17px;
+}
+.footer-last a{
+    color:#0000FF;
+    font-size:17px;
+}
+.login-first-sec-desc{
+    margin-bottom:0px;
+}
+.footer-main{
+    
+}
