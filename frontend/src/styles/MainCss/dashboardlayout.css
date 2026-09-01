@@ -383,6 +383,388 @@
     color: var(--dark-text-primary);
 }
 
+/* Dashboard section design */
+
+/* =========================
+   DASHBOARD CONTAINER
+========================= */
+
+.Dashboard-container {
+    width: 100%;
+}
+
+
+/* =========================
+   DASHBOARD HEADER
+========================= */
+
+.Dashboard-header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    text-align: left;
+
+    margin-bottom: 30px;
+}
+
+
+/* Heading */
+
+.Dashboard-heading-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.Dashboard-top-heading {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+.Dashboard-desc {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CREATE NEW BUTTON
+========================= */
+
+.Dashboard-top-button {
+    display: flex;
+    align-items: center;
+}
+
+
+.CreateNew-Button {
+    padding: 10px 23px;
+
+    background-color: var(--bg-primary);
+
+    border: 2px solid var(--primary-color);
+
+    border-radius: 7px;
+
+    color: var(--primary-color);
+
+    font-weight: bold;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.CreateNew-Button:hover {
+    background-color: var(--primary-color);
+
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   DASHBOARD STATS
+========================= */
+
+.Dashboard-stats {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   STAT CARD
+========================= */
+
+.stats-card {
+    min-height: 125px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.stats-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   ICON CONTAINER
+========================= */
+
+.stat-icon {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   FONT AWESOME ICONS
+========================= */
+
+.fa-folder,
+.fa-file-lines,
+.fa-calendar,
+.fa-users {
+
+    padding: 0;
+
+    font-size: 25px;
+
+    background: transparent;
+
+    /* White icon */
+    color: white;
+
+    /* Purple/colored outline */
+    -webkit-text-stroke: 1.5px currentColor;
+}
+
+
+/* =========================
+   PROJECT ICON
+========================= */
+
+.Projects-icon {
+    background-color: rgba(122, 38, 122, 0.12);
+}
+
+
+.Projects-icon .fa-folder {
+    color: rgb(122, 38, 122);
+
+    -webkit-text-stroke: 1px rgb(122, 38, 122);
+
+    /* White center */
+    -webkit-text-fill-color: white;
+}
+
+
+/* =========================
+   RESEARCH ICON
+========================= */
+
+.Research-icon {
+    background-color: rgba(27, 143, 27, 0.12);
+}
+
+
+.Research-icon .fa-file-lines {
+    color: rgb(27, 143, 27);
+
+    -webkit-text-stroke: 1px rgb(27, 143, 27);
+
+    -webkit-text-fill-color: white;
+}
+
+
+/* =========================
+   EVENT ICON
+========================= */
+
+.Events-icon {
+    background-color: rgba(244, 33, 68, 0.12);
+}
+
+
+.Events-icon .fa-calendar {
+    color: rgb(244, 33, 68);
+
+    -webkit-text-stroke: 1px rgb(244, 33, 68);
+
+    -webkit-text-fill-color: white;
+}
+
+
+/* =========================
+   CONNECTION ICON
+========================= */
+
+.Connections-icon {
+    background-color: rgba(246, 174, 39, 0.12);
+}
+
+
+.Connections-icon .fa-users {
+    color: rgb(246, 174, 39);
+
+    -webkit-text-stroke: 1px rgb(246, 174, 39);
+
+    -webkit-text-fill-color: white;
+}
+
+
+/* =========================
+   STAT INFORMATION
+========================= */
+
+.stat-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    text-align: left;
+}
+
+
+.stat-info h2 {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 27px;
+
+    font-weight: 700;
+}
+
+
+.stat-info p {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   STAT DESCRIPTIONS
+========================= */
+
+.Project-desc,
+.Research-desc,
+.Event-desc,
+.Connection-desc {
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.Project-desc {
+    color: rgb(109, 30, 109);
+}
+
+
+.Research-desc {
+    color: rgb(27, 143, 27);
+}
+
+
+.Event-desc {
+    color: rgb(244, 33, 68);
+}
+
+
+.Connection-desc {
+    color: rgb(246, 174, 39);
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dashboard.dark-mode .Dashboard-top-heading {
+    color: var(--dark-text-primary);
+}
+
+
+.dashboard.dark-mode .Dashboard-desc {
+    color: var(--dark-text-secondary);
+}
+
+
+.dashboard.dark-mode .stats-card {
+    background-color: var(--dark-bg-secondary);
+
+    border-color: var(--dark-border);
+}
+
+
+.dashboard.dark-mode .stat-info h2 {
+    color: var(--dark-text-primary);
+}
+
+
+.dashboard.dark-mode .stat-info p {
+    color: var(--dark-text-secondary);
+}
+
+
+.dashboard.dark-mode .CreateNew-Button {
+    background-color: transparent;
+
+    color: var(--dark-primary-text);
+}
+
+
+.dashboard.dark-mode .CreateNew-Button:hover {
+    background-color: var(--primary-color);
+
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 
 /* =========================
    RESPONSIVE
@@ -401,5 +783,22 @@
     .main-content {
         padding: var(--space-lg);
     }
+}
+@media (max-width: 1100px) {
+    .Dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 650px) {
+    .Dashboard-header {
+        flex-direction: column;
 
+        gap: 20px;
+    }
+    .Dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+    .stats-card {
+        padding: 18px;
+    }
 }
