@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================================
    RESET
-========================= */
+========================================================= */
 
 * {
     margin: 0;
@@ -9,9 +9,21 @@
 }
 
 
-/* =========================
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+
+body {
+    font-family: sans-serif;
+}
+
+
+/* =========================================================
    DASHBOARD
-========================= */
+========================================================= */
 
 .dashboard {
     min-height: 100vh;
@@ -21,45 +33,43 @@
 
     background-color: var(--bg-primary);
 
-    font-family: sans-serif;
+    color: var(--text-primary);
 }
 
 
-/* =========================
+/* =========================================================
    SIDEBAR
-========================= */
+========================================================= */
 
 .sidebar {
     width: 220px;
     min-height: 100vh;
-
-    background-color: var(--bg-secondary);
-
-    border-right: 1px solid var(--border-color);
 
     display: flex;
     flex-direction: column;
 
     padding: var(--space-xl) var(--space-md);
 
+    background-color: var(--bg-secondary);
+
+    border-right: 1px solid var(--border-color);
+
     transition: width var(--transition-normal);
 }
 
 
-/* Logo */
-
 .dashboard-logo {
-    font-size: var(--font-2xl);
-
     margin-bottom: var(--space-3xl);
 
     padding-left: var(--space-md);
+
+    font-size: var(--font-2xl);
 }
 
 
-/* =========================
+/* =========================================================
    SIDEBAR NAVIGATION
-========================= */
+========================================================= */
 
 .sidebar-nav {
     display: flex;
@@ -71,38 +81,41 @@
 
 .sidebar-nav a {
     display: flex;
+    align-items: center;
 
     gap: var(--space-lg);
 
-    text-decoration: none;
+    padding: 12px var(--space-md);
 
     color: var(--text-secondary);
-
-    padding: 12px var(--space-md);
 
     border-radius: var(--radius-md);
 
     font-size: var(--font-md);
+
+    text-decoration: none;
+
+    transition: var(--transition-fast);
 }
 
 
 .sidebar-nav a:hover {
-    background-color: var(--primary-light);
-
     color: var(--primary-color);
+
+    background-color: var(--primary-light);
 }
 
 
 .sidebar-nav a.active {
-    background-color: var(--primary-light);
-
     color: var(--primary-color);
+
+    background-color: var(--primary-light);
 }
 
 
-/* =========================
+/* =========================================================
    SIDEBAR CLOSED
-========================= */
+========================================================= */
 
 .sidebar-closed .sidebar {
     width: 0;
@@ -119,9 +132,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    SIDEBAR TOGGLE
-========================= */
+========================================================= */
 
 .sidebar-toggle {
     border: none;
@@ -134,22 +147,24 @@
 }
 
 
-/* =========================
+/* =========================================================
    LOGOUT
-========================= */
+========================================================= */
 
 .Logout-btn {
     padding: 12px var(--space-md);
 
-    border: none;
+    color: var(--danger-color);
 
     background: transparent;
 
-    text-align: left;
+    border: none;
 
-    color: var(--danger-color);
+    border-radius: var(--radius-md);
 
     font-size: var(--font-sm);
+
+    text-align: left;
 
     cursor: pointer;
 }
@@ -157,8 +172,6 @@
 
 .Logout-btn:hover {
     background-color: var(--danger-light);
-
-    border-radius: var(--radius-md);
 }
 
 
@@ -178,43 +191,43 @@
 }
 
 
-/* =========================
+/* =========================================================
    RIGHT SIDE
-========================= */
+========================================================= */
 
 .dashboard-content {
     flex: 1;
 
     min-width: 0;
+
+    width: auto;
 }
 
 
-/* =========================
+/* =========================================================
    TOPBAR
-========================= */
+========================================================= */
 
 .topbar {
+    width: 100%;
     height: 65px;
 
-    width: 100%;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
 
     padding: 0 var(--space-xl);
 
     background-color: var(--bg-secondary);
 
     border-bottom: 1px solid var(--border-color);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
 }
 
 
-/* =========================
+/* =========================================================
    TOPBAR ICONS
-========================= */
+========================================================= */
 
 .topbar-icons {
     display: flex;
@@ -233,16 +246,23 @@
     font-size: var(--font-xl);
 
     cursor: pointer;
+
+    transition: var(--transition-fast);
 }
 
 
-/* =========================
+/* =========================================================
    PROFILE
-========================= */
+========================================================= */
 
 .topbar-icons .profile-btn {
     width: 40px;
     height: 40px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
 
     border-radius: 50%;
 
@@ -253,168 +273,54 @@
     font-size: var(--font-lg);
 
     font-weight: bold;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
 }
 
 
-/* =========================
+/* =========================================================
    MAIN CONTENT
-========================= */
+========================================================= */
 
 .main-content {
     min-height: calc(100vh - 65px);
 
     padding: var(--space-2xl);
 
-    text-align: center;
+    text-align: left;
 }
 
 
-/* =====================================================
-   DARK MODE
-===================================================== */
-
-.dashboard.dark-mode {
-    background-color: var(--dark-bg-primary);
-
-    color: var(--dark-text-primary);
-}
-
-
-/* Sidebar */
-
-.dashboard.dark-mode .sidebar {
-    background-color: var(--dark-bg-secondary);
-
-    border-right-color: var(--dark-border);
-}
-
-
-.dashboard.dark-mode .dashboard-logo {
-    color: var(--dark-text-primary);
-}
-
-
-/* Sidebar links */
-
-.dashboard.dark-mode .sidebar-nav a {
-    color: var(--dark-text-secondary);
-}
-
-
-.dashboard.dark-mode .sidebar-nav a:hover {
-    background-color: var(--dark-border);
-
-    color: #a5b4fc;
-}
-
-
-.dashboard.dark-mode .sidebar-nav a.active {
-    background-color: var(--dark-primary-light);
-
-    color: var(--dark-primary-text);
-}
-
-
-/* Logout */
-
-.dashboard.dark-mode .dashboard-logout-line {
-    background-color: var(--dark-border);
-}
-
-
-.dashboard.dark-mode .Logout-btn {
-    color: #f87171;
-}
-
-
-.dashboard.dark-mode .Logout-btn:hover {
-    background-color: var(--dark-danger-light);
-}
-
-
-/* Right side */
-
-.dashboard.dark-mode .dashboard-content {
-    background-color: var(--dark-bg-primary);
-}
-
-
-/* Topbar */
-
-.dashboard.dark-mode .topbar {
-    background-color: var(--dark-bg-secondary);
-
-    border-bottom-color: var(--dark-border);
-}
-
-
-/* Topbar buttons */
-
-.dashboard.dark-mode .topbar-icons button {
-    color: var(--dark-text-primary);
-}
-
-
-.dashboard.dark-mode .topbar-icons button:hover {
-    color: #a5b4fc;
-}
-
-
-/* Profile */
-
-.dashboard.dark-mode .topbar-icons .profile-btn {
-    background-color: var(--primary-color);
-
-    color: white;
-}
-
-
-/* Main */
-
-.dashboard.dark-mode .main-content {
-    background-color: var(--dark-bg-primary);
-
-    color: var(--dark-text-primary);
-}
-
-/* Dashboard section design */
-
-/* =========================
+/* =========================================================
    DASHBOARD CONTAINER
-========================= */
+========================================================= */
 
 .Dashboard-container {
     width: 100%;
 }
 
 
-/* =========================
+/* =========================================================
    DASHBOARD HEADER
-========================= */
+========================================================= */
 
 .Dashboard-header {
     width: 100%;
 
     display: flex;
+
     justify-content: space-between;
     align-items: flex-start;
 
-    text-align: left;
+    gap: 20px;
 
     margin-bottom: 30px;
+
+    text-align: left;
 }
 
 
-/* Heading */
-
 .Dashboard-heading-container {
     display: flex;
+
     flex-direction: column;
 
     gap: 10px;
@@ -427,6 +333,7 @@
     color: var(--text-primary);
 
     font-size: 28px;
+
     font-weight: 700;
 }
 
@@ -440,18 +347,23 @@
 }
 
 
-/* =========================
+/* =========================================================
    CREATE NEW BUTTON
-========================= */
+========================================================= */
 
 .Dashboard-top-button {
     display: flex;
+
     align-items: center;
+
+    flex-shrink: 0;
 }
 
 
 .CreateNew-Button {
     padding: 10px 23px;
+
+    color: var(--primary-color);
 
     background-color: var(--bg-primary);
 
@@ -459,36 +371,37 @@
 
     border-radius: 7px;
 
-    color: var(--primary-color);
+    font-family: inherit;
+
+    font-size: 14px;
 
     font-weight: bold;
-    font-size: 14px;
 
     cursor: pointer;
 
-    transition: all 0.2s ease;
+    transition: var(--transition-fast);
 }
 
 
 .CreateNew-Button:hover {
-    background-color: var(--primary-color);
-
     color: white;
+
+    background-color: var(--primary-color);
 
     transform: translateY(-1px);
 }
 
 
-/* =========================
+/* =========================================================
    DASHBOARD STATS
-========================= */
+========================================================= */
 
 .Dashboard-stats {
     width: 100%;
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
     gap: 16px;
 
@@ -496,14 +409,15 @@
 }
 
 
-/* =========================
-   STAT CARD
-========================= */
+/* =========================================================
+   STATS CARD
+========================================================= */
 
 .stats-card {
     min-height: 125px;
 
     display: flex;
+
     align-items: center;
 
     gap: 18px;
@@ -529,9 +443,9 @@
 }
 
 
-/* =========================
-   ICON CONTAINER
-========================= */
+/* =========================================================
+   STAT ICON
+========================================================= */
 
 .stat-icon {
     width: 55px;
@@ -548,32 +462,14 @@
 }
 
 
-/* =========================
-   FONT AWESOME ICONS
-========================= */
-
-.fa-folder,
-.fa-file-lines,
-.fa-calendar,
-.fa-users {
-
-    padding: 0;
-
+.stat-icon i {
     font-size: 25px;
-
-    background: transparent;
-
-    /* White icon */
-    color: white;
-
-    /* Purple/colored outline */
-    -webkit-text-stroke: 1.5px currentColor;
 }
 
 
-/* =========================
+/* =========================================================
    PROJECT ICON
-========================= */
+========================================================= */
 
 .Projects-icon {
     background-color: rgba(122, 38, 122, 0.12);
@@ -582,17 +478,12 @@
 
 .Projects-icon .fa-folder {
     color: rgb(122, 38, 122);
-
-    -webkit-text-stroke: 1px rgb(122, 38, 122);
-
-    /* White center */
-    -webkit-text-fill-color: white;
 }
 
 
-/* =========================
+/* =========================================================
    RESEARCH ICON
-========================= */
+========================================================= */
 
 .Research-icon {
     background-color: rgba(27, 143, 27, 0.12);
@@ -601,16 +492,12 @@
 
 .Research-icon .fa-file-lines {
     color: rgb(27, 143, 27);
-
-    -webkit-text-stroke: 1px rgb(27, 143, 27);
-
-    -webkit-text-fill-color: white;
 }
 
 
-/* =========================
-   EVENT ICON
-========================= */
+/* =========================================================
+   EVENTS ICON
+========================================================= */
 
 .Events-icon {
     background-color: rgba(244, 33, 68, 0.12);
@@ -619,16 +506,12 @@
 
 .Events-icon .fa-calendar {
     color: rgb(244, 33, 68);
-
-    -webkit-text-stroke: 1px rgb(244, 33, 68);
-
-    -webkit-text-fill-color: white;
 }
 
 
-/* =========================
-   CONNECTION ICON
-========================= */
+/* =========================================================
+   CONNECTIONS ICON
+========================================================= */
 
 .Connections-icon {
     background-color: rgba(246, 174, 39, 0.12);
@@ -637,16 +520,12 @@
 
 .Connections-icon .fa-users {
     color: rgb(246, 174, 39);
-
-    -webkit-text-stroke: 1px rgb(246, 174, 39);
-
-    -webkit-text-fill-color: white;
 }
 
 
-/* =========================
+/* =========================================================
    STAT INFORMATION
-========================= */
+========================================================= */
 
 .stat-info {
     display: flex;
@@ -654,6 +533,8 @@
     flex-direction: column;
 
     gap: 5px;
+
+    min-width: 0;
 
     text-align: left;
 }
@@ -681,15 +562,14 @@
 }
 
 
-/* =========================
+/* =========================================================
    STAT DESCRIPTIONS
-========================= */
+========================================================= */
 
 .Project-desc,
 .Research-desc,
 .Event-desc,
 .Connection-desc {
-
     font-size: 12px;
 
     font-weight: 600;
@@ -716,9 +596,1356 @@
 }
 
 
-/* =========================
+/* =========================================================
+   LOWER SECTION
+   THREE COLUMNS
+========================================================= */
+
+.dashboard-lower-section {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-top: 20px;
+
+    /*
+       Stretch all three columns to the
+       height of the tallest section.
+    */
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   DASHBOARD SECTION
+========================================================= */
+
+.dashboard-section {
+    min-width: 0;
+
+    width: 100%;
+
+    padding: 20px;
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    /*
+       Ensures the section fills the
+       entire grid row height.
+    */
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+
+.section-header h2 {
+    margin: 0 0 6px;
+
+    color: var(--text-primary);
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+.section-header p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PROJECT LIST
+========================================================= */
+
+.project-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    padding: 12px;
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   PROJECT ICON
+========================================================= */
+
+.project-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+
+    font-size: 20px;
+}
+
+
+.project-icon.purple {
+    background-color: var(--primary-light);
+}
+
+
+.project-icon.green {
+    background-color: var(--success-light);
+}
+
+
+/* =========================================================
+   PROJECT INFO
+========================================================= */
+
+.project-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.project-info h3 {
+    margin: 0 0 6px;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.project-info p {
+    margin: 6px 0 0;
+
+    overflow: hidden;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* IN PROGRESS = PURPLE */
+
+.status.in-progress {
+    color: var(--primary-color);
+
+    background-color: var(--primary-light);
+}
+
+
+/* COMPLETED = GREEN */
+
+.status.completed {
+    color: var(--success-color);
+
+    background-color: var(--success-light);
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 9px 0 6px;
+}
+
+
+.progress-bar {
+    flex: 1;
+
+    height: 6px;
+
+    overflow: hidden;
+
+    background-color: var(--border-color);
+
+    border-radius: 10px;
+}
+
+
+.progress-fill {
+    height: 100%;
+
+    border-radius: 10px;
+}
+
+
+.purple-fill {
+    background-color: var(--primary-color);
+}
+
+
+.green-fill {
+    background-color: var(--success-color);
+}
+
+
+.progress-row > span {
+    min-width: 28px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   PROJECT MEMBERS
+========================================================= */
+
+.project-members {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    color: var(--text-primary);
+
+    font-size: 11px;
+}
+
+
+.project-members span {
+    margin-left: 3px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   VIEW ALL BUTTON
+   PROJECTS + RESEARCH
+========================================================= */
+
+.view-all-button {
+    display: block;
+
+    width: fit-content;
+
+    /*
+       Pushes the button to the bottom
+       because dashboard-section is flex.
+    */
+    margin: auto auto 0;
+
+    padding: 8px 15px;
+
+    color: var(--primary-color);
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--primary-color);
+
+    border-radius: 6px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+
+.view-all-button:hover {
+    color: white;
+
+    background-color: var(--primary-color);
+}
+
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+.research-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+
+.research-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    padding: 12px;
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.research-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   RESEARCH ICON
+========================================================= */
+
+.research-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+
+    font-size: 19px;
+}
+
+
+.research-icon.purple {
+    background-color: var(--primary-light);
+}
+
+
+.research-icon.green {
+    background-color: var(--success-light);
+}
+
+
+/* =========================================================
+   RESEARCH INFO
+========================================================= */
+
+.research-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.research-info h3 {
+    margin: 0 0 6px;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+}
+
+
+.research-info p {
+    margin: 6px 0 0;
+
+    overflow: hidden;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.research-members {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.event-tabs {
+    display: flex;
+
+    gap: 24px;
+
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+.event-tabs button {
+    position: relative;
+
+    padding: 9px 0 11px;
+
+    color: var(--text-muted);
+
+    background: transparent;
+
+    border: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+
+.event-tabs button:hover {
+    color: var(--primary-color);
+}
+
+
+/* =========================================================
+   ACTIVE TAB COLORS
+========================================================= */
+
+/* UPCOMING = GREEN */
+
+.event-tabs button:nth-child(1).active {
+    color: var(--success-color);
+
+    font-weight: 700;
+}
+
+
+.event-tabs button:nth-child(1).active::after {
+    background-color: var(--success-color);
+}
+
+
+/* ATTENDED = BLUE */
+
+.event-tabs button:nth-child(2).active {
+    color: #2563eb;
+
+    font-weight: 700;
+}
+
+
+.event-tabs button:nth-child(2).active::after {
+    background-color: #2563eb;
+}
+
+
+/* MISSED = RED */
+
+.event-tabs button:nth-child(3).active {
+    color: var(--danger-color);
+
+    font-weight: 700;
+}
+
+
+.event-tabs button:nth-child(3).active::after {
+    background-color: var(--danger-color);
+}
+
+
+/* =========================================================
+   ACTIVE TAB UNDERLINE
+========================================================= */
+
+.event-tabs button.active::after {
+    position: absolute;
+
+    right: 0;
+    bottom: -1px;
+    left: 0;
+
+    height: 2px;
+
+    content: "";
+}
+
+
+/* =========================================================
+   EVENT LIST
+========================================================= */
+
+.event-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+
+.event-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    padding: 11px;
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.event-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   EVENT DATE
+========================================================= */
+
+.event-date {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 7px;
+
+    text-align: center;
+}
+
+
+.event-date strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.event-date span {
+    display: block;
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   UPCOMING = GREEN
+========================================================= */
+
+.upcoming-event {
+    color: var(--success-color);
+
+    background-color: var(--success-light);
+}
+
+
+.upcoming-event strong {
+    color: var(--success-color);
+}
+
+
+.upcoming-event-text {
+    color: var(--success-color);
+}
+
+
+.upcoming-status {
+    color: var(--success-color);
+
+    background-color: var(--success-light);
+}
+
+
+/* =========================================================
+   ATTENDED = BLUE
+========================================================= */
+
+.attended-event {
+    color: #2563eb;
+
+    background-color: rgba(37, 99, 235, 0.10);
+}
+
+
+.attended-event strong {
+    color: #2563eb;
+}
+
+
+.attended-event-text {
+    color: #2563eb;
+}
+
+
+.attended-status {
+    color: #2563eb;
+
+    background-color: rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   MISSED = RED
+========================================================= */
+
+.missed-event {
+    color: var(--danger-color);
+
+    background-color: var(--danger-light);
+}
+
+
+.missed-event strong {
+    color: var(--danger-color);
+}
+
+
+.missed-event-text {
+    color: var(--danger-color);
+}
+
+
+.missed-status {
+    color: var(--danger-color);
+
+    background-color: var(--danger-light);
+}
+
+
+/* =========================================================
+   EVENT INFORMATION
+========================================================= */
+
+.event-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.event-info h3 {
+    margin: 0 0 5px;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.event-info p {
+    margin: 0 0 5px;
+
+    overflow: hidden;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   EVENT TYPE
+========================================================= */
+
+.event-type {
+    display: inline-block;
+
+    padding: 3px 6px;
+
+    border-radius: 4px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EVENT STATUS
+========================================================= */
+
+.event-status {
+    flex-shrink: 0;
+
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CREATE MODAL OVERLAY
+========================================================= */
+
+.create-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.45);
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   CREATE MODAL
+========================================================= */
+
+.create-modal {
+    position: relative;
+
+    width: min(650px, 100%);
+
+    max-height: 90vh;
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+    background-color: var(--bg-secondary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MODAL HEADING
+========================================================= */
+
+.create-modal > h2 {
+    margin: 0 0 6px;
+
+    color: var(--text-primary);
+
+    font-size: 24px;
+}
+
+
+.create-modal > p {
+    margin: 0 0 25px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MODAL CLOSE
+========================================================= */
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text-muted);
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   CREATE OPTIONS
+========================================================= */
+
+.create-options {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.create-option {
+    padding: 25px 15px;
+
+    background-color: var(--bg-primary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+
+.create-option:hover {
+    transform: translateY(-3px);
+
+    background-color: var(--primary-light);
+
+    border-color: var(--primary-color);
+}
+
+
+.create-option span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 30px;
+}
+
+
+.create-option h3 {
+    margin-bottom: 5px;
+
+    color: var(--text-primary);
+
+    font-size: 16px;
+}
+
+
+.create-option p {
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   BACK TO DASHBOARD
+========================================================= */
+
+.CreateTypeSelection-link {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+
+.CreateTypeSelection-link a {
+    display: inline-block;
+
+    width: max-content;
+
+    padding: 5px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+
+.CreateTypeSelection-link a:hover {
+    color: var(--primary-color);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   CREATE FORM
+========================================================= */
+
+.create-modal form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.form-group label {
+    color: var(--text-primary);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    color: var(--text-primary);
+
+    background-color: var(--bg-primary);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: var(--transition-fast);
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.form-group textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+
+.form-actions button {
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+
+/* BACK */
+
+.form-actions button:first-child {
+    color: var(--text-secondary);
+
+    background-color: transparent;
+
+    border: 1px solid var(--border-color);
+}
+
+
+.form-actions button:first-child:hover {
+    color: var(--text-primary);
+
+    background-color: var(--bg-primary);
+}
+
+
+/* CANCEL */
+
+.form-actions button:nth-child(2) {
+    color: var(--text-secondary);
+
+    background-color: var(--bg-primary);
+
+    border: 1px solid var(--border-color);
+}
+
+
+.form-actions button:nth-child(2):hover {
+    background-color: var(--border-color);
+}
+
+
+/* CREATE */
+
+.form-actions button:last-child {
+    color: white;
+
+    background-color: var(--primary-color);
+
+    border: 1px solid var(--primary-color);
+}
+
+
+.form-actions button:last-child:hover {
+    opacity: 0.9;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
    DARK MODE
-========================= */
+========================================================= */
+
+.dashboard.dark-mode {
+    background-color: var(--dark-bg-primary);
+
+    color: var(--dark-text-primary);
+}
+
+
+.dashboard.dark-mode .sidebar {
+    background-color: var(--dark-bg-secondary);
+
+    border-right-color: var(--dark-border);
+}
+
+
+.dashboard.dark-mode .dashboard-logo {
+    color: var(--dark-text-primary);
+}
+
+
+.dashboard.dark-mode .sidebar-nav a {
+    color: var(--dark-text-secondary);
+}
+
+
+.dashboard.dark-mode .sidebar-nav a:hover {
+    color: #a5b4fc;
+
+    background-color: var(--dark-border);
+}
+
+
+.dashboard.dark-mode .sidebar-nav a.active {
+    color: var(--dark-primary-text);
+
+    background-color: var(--dark-primary-light);
+}
+
+
+.dashboard.dark-mode .dashboard-logout-line {
+    background-color: var(--dark-border);
+}
+
+
+.dashboard.dark-mode .Logout-btn {
+    color: #f87171;
+}
+
+
+.dashboard.dark-mode .Logout-btn:hover {
+    background-color: var(--dark-danger-light);
+}
+
+
+.dashboard.dark-mode .dashboard-content {
+    background-color: var(--dark-bg-primary);
+}
+
+
+.dashboard.dark-mode .topbar {
+    background-color: var(--dark-bg-secondary);
+
+    border-bottom-color: var(--dark-border);
+}
+
+
+.dashboard.dark-mode .topbar-icons button {
+    color: var(--dark-text-primary);
+}
+
+
+.dashboard.dark-mode .topbar-icons button:hover {
+    color: #a5b4fc;
+}
+
+
+.dashboard.dark-mode .main-content {
+    background-color: var(--dark-bg-primary);
+
+    color: var(--dark-text-primary);
+}
+
+
+/* =========================================================
+   DARK MODE - DASHBOARD
+========================================================= */
 
 .dashboard.dark-mode .Dashboard-top-heading {
     color: var(--dark-text-primary);
@@ -730,75 +1957,359 @@
 }
 
 
-.dashboard.dark-mode .stats-card {
+.dashboard.dark-mode .stats-card,
+.dashboard.dark-mode .dashboard-section,
+.dashboard.dark-mode .project-card,
+.dashboard.dark-mode .research-card,
+.dashboard.dark-mode .event-card {
     background-color: var(--dark-bg-secondary);
 
     border-color: var(--dark-border);
 }
 
 
-.dashboard.dark-mode .stat-info h2 {
+.dashboard.dark-mode .stat-info h2,
+.dashboard.dark-mode .section-header h2,
+.dashboard.dark-mode .project-info h3,
+.dashboard.dark-mode .research-info h3,
+.dashboard.dark-mode .event-info h3 {
     color: var(--dark-text-primary);
 }
 
 
-.dashboard.dark-mode .stat-info p {
+.dashboard.dark-mode .stat-info p,
+.dashboard.dark-mode .section-header p,
+.dashboard.dark-mode .project-info p,
+.dashboard.dark-mode .research-info p,
+.dashboard.dark-mode .event-info p {
     color: var(--dark-text-secondary);
 }
 
 
 .dashboard.dark-mode .CreateNew-Button {
-    background-color: transparent;
-
     color: var(--dark-primary-text);
+
+    background-color: transparent;
 }
 
 
 .dashboard.dark-mode .CreateNew-Button:hover {
-    background-color: var(--primary-color);
-
     color: white;
+
+    background-color: var(--primary-color);
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+.dashboard.dark-mode .create-modal {
+    background-color: var(--dark-bg-secondary);
+
+    border-color: var(--dark-border);
+}
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+.dashboard.dark-mode .create-option {
+    background-color: var(--dark-bg-primary);
 
-@media (max-width: 768px) {
+    border-color: var(--dark-border);
+}
+
+
+.dashboard.dark-mode .form-group input,
+.dashboard.dark-mode .form-group select,
+.dashboard.dark-mode .form-group textarea {
+    color: var(--dark-text-primary);
+
+    background-color: var(--dark-bg-primary);
+
+    border-color: var(--dark-border);
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .Dashboard-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .dashboard-lower-section {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 800px
+========================================================= */
+
+@media (max-width: 800px) {
 
     .sidebar {
         width: 200px;
     }
 
+
+    .dashboard-lower-section {
+        grid-template-columns: 1fr;
+    }
+
+
     .topbar {
         padding: 0 var(--space-md);
     }
 
+
     .main-content {
         padding: var(--space-lg);
     }
+
 }
-@media (max-width: 1100px) {
-    .Dashboard-stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* =========================================================
+   DARK MODE - MODAL TEXT
+========================================================= */
+
+.dashboard.dark-mode .create-modal {
+    color: var(--dark-text-primary);
 }
+
+/* Modal heading */
+.dashboard.dark-mode .create-modal > h2 {
+    color: white;
+}
+
+/* Modal description */
+.dashboard.dark-mode .create-modal > p {
+    color: var(--dark-text-secondary);
+}
+
+/* Create option headings */
+.dashboard.dark-mode .create-option h3 {
+    color: white;
+}
+
+/* Create option descriptions */
+.dashboard.dark-mode .create-option p {
+    color: var(--dark-text-secondary);
+}
+
+
+/* =========================================================
+   DARK MODE - FORM
+========================================================= */
+
+/* Form labels */
+.dashboard.dark-mode .form-group label {
+    color: white;
+}
+
+/* Inputs, select and textarea */
+.dashboard.dark-mode .form-group input,
+.dashboard.dark-mode .form-group select,
+.dashboard.dark-mode .form-group textarea {
+    color: white;
+    background-color: var(--dark-bg-primary);
+    border-color: var(--dark-border);
+}
+
+/* Placeholder text */
+.dashboard.dark-mode .form-group input::placeholder,
+.dashboard.dark-mode .form-group textarea::placeholder {
+    color: var(--dark-text-secondary);
+}
+
+
+/* Select option text */
+.dashboard.dark-mode .form-group select option {
+    color: white;
+    background-color: var(--dark-bg-secondary);
+}
+
+
+/* Back / Cancel buttons */
+.dashboard.dark-mode .form-actions button:first-child,
+.dashboard.dark-mode .form-actions button:nth-child(2) {
+    color: var(--dark-text-primary);
+}
+
+
+/* Close button */
+.dashboard.dark-mode .modal-close {
+    color: var(--dark-text-secondary);
+}
+
+.dashboard.dark-mode .modal-close:hover {
+    color: white;
+}
+/* Cancel button */
+.dashboard.dark-mode .form-actions button:nth-child(2) {
+    color: white;
+}
+
+
+/* Event / Research / Project buttons */
+.dashboard.dark-mode .create-option h2,
+.dashboard.dark-mode .create-option h3 {
+    color: white;
+}
+.dashboard.dark-mode .form-actions button:nth-child(2) {
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+
+/* =========================================================
+   RESPONSIVE - 650px
+========================================================= */
+
 @media (max-width: 650px) {
+
     .Dashboard-header {
         flex-direction: column;
 
         gap: 20px;
     }
+
+
     .Dashboard-stats {
         grid-template-columns: 1fr;
     }
+
+
     .stats-card {
         padding: 18px;
     }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .Dashboard-top-button {
+        width: 100%;
+    }
+
+
+    .CreateNew-Button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .create-modal {
+        width: 92%;
+
+        padding: 22px 18px;
+    }
+
+
+    .create-options {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-actions {
+        flex-wrap: wrap;
+    }
+
+
+    .form-actions button {
+        flex: 1;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .main-content {
+        padding: 14px;
+    }
+
+
+    .dashboard-lower-section {
+        gap: 12px;
+    }
+
+
+    .dashboard-section {
+        padding: 14px;
+    }
+
+
+    .section-header h2 {
+        font-size: 16px;
+    }
+
+
+    .section-header p {
+        font-size: 11px;
+    }
+
+
+    .project-card,
+    .research-card {
+        padding: 10px;
+    }
+
+
+    .project-info h3 {
+        font-size: 13px;
+    }
+
+
+    .project-info p,
+    .research-info p {
+        font-size: 10px;
+    }
+
+
+    .research-info h3 {
+        font-size: 12px;
+    }
+
+
+    .event-card {
+        padding: 9px;
+    }
+
+
+    .event-info h3 {
+        font-size: 12px;
+    }
+
+
+    .event-info p {
+        font-size: 9px;
+    }
+
+
+    .event-status {
+        display: none;
+    }
+
+
+    .project-members,
+    .research-members {
+        display: none;
+    }
+
 }

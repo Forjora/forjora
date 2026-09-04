@@ -127,4 +127,18 @@
 
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
+
+/* =====================================================
+ Dashboard-lowerhalf
+======================================================*/
+
+--success-light: #ecfdf5;
+
+--warning-color: #f59e0b;
+--warning-light: #fff7ed;
+
+--pink-color: #ec4899;
+--pink-light: #fdf2f8;
+
+--blue-light: #eef2ff;
 }
