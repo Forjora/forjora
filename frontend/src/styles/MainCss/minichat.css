@@ -1,191 +1,604 @@
-/* =========================
-   MINI CHAT
-========================= */
+/* =====================================================
+   NOTIFICATIONS PAGE
+   ===================================================== */
 
-.mini-chat {
+.notifications-page {
+    width: 100%;
+    padding: 28px 32px 40px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE TITLE
+   ===================================================== */
+
+.notifications-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 26px;
+}
+
+.title-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1edff;
+    color: #5935e8;
+
+    flex-shrink: 0;
+}
+
+.notifications-title h1 {
+    margin: 0 0 5px;
+
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    color: #111827;
+}
+
+.notifications-title p {
+    margin: 0;
+
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* =====================================================
+   MAIN NOTIFICATION CONTAINER
+   ===================================================== */
+
+.notifications-container {
     width: 100%;
 
-    max-width: 500px;
+    background: #ffffff;
 
-    margin: 0 auto;
-
-    background-color: var(--bg-secondary);
-
-    border: 1px solid var(--border-color);
-
-    border-radius: var(--radius-lg);
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
 
     overflow: hidden;
 
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 8px rgba(30, 20, 80, 0.03);
 }
 
 
-/* =========================
-   CHAT HEADER
-========================= */
+/* =====================================================
+   TABS HEADER
+   ===================================================== */
 
-.chat-header {
-    padding: var(--space-lg);
-
-    background-color: var(--primary-color);
-
-    color: white;
+.notifications-tabs {
+    min-height: 76px;
 
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
 
+    padding: 0 24px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-sizing: border-box;
+}
+
+.tabs-left {
+    height: 100%;
+
+    display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 
-.chat-header h3 {
-    font-size: var(--font-lg);
-}
+/* =====================================================
+   TAB BUTTONS
+   ===================================================== */
 
+.tab {
+    position: relative;
 
-/* =========================
-   MESSAGES
-========================= */
+    height: 76px;
 
-.chat-messages {
-    height: 350px;
-
-    padding: var(--space-lg);
-
-    overflow-y: auto;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: var(--space-md);
-}
-
-
-/* Message */
-
-.message {
-    max-width: 75%;
-
-    padding: 10px 13px;
-
-    border-radius: var(--radius-md);
-
-    font-size: var(--font-sm);
-
-    line-height: 1.5;
-}
-
-
-/* Other user */
-
-.message.received {
-    align-self: flex-start;
-
-    background-color: #f3f4f6;
-
-    color: var(--text-secondary);
-}
-
-
-/* Current user */
-
-.message.sent {
-    align-self: flex-end;
-
-    background-color: var(--primary-color);
-
-    color: white;
-}
-
-
-/* =========================
-   CHAT INPUT
-========================= */
-
-.chat-input {
-    display: flex;
-
-    gap: var(--space-sm);
-
-    padding: var(--space-md);
-
-    border-top: 1px solid var(--border-color);
-}
-
-
-.chat-input input {
-    flex: 1;
-
-    padding: 10px 12px;
-
-    border: 1px solid var(--border-color);
-
-    border-radius: var(--radius-md);
-
-    outline: none;
-
-    background-color: var(--bg-secondary);
-
-    color: var(--text-primary);
-}
-
-
-.chat-input input:focus {
-    border-color: var(--primary-color);
-}
-
-
-.chat-input button {
-    padding: 10px 15px;
+    padding: 0 16px;
 
     border: none;
+    background: transparent;
 
-    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
 
-    background-color: var(--primary-color);
-
-    color: white;
+    color: #4b5563;
 
     cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.tab:hover {
+    color: #5935e8;
+}
+
+.tab.active {
+    color: #5935e8;
+    font-weight: 600;
+}
+
+.tab.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+
+    height: 2px;
+
+    background: #5935e8;
+
+    border-radius: 3px 3px 0 0;
 }
 
 
-/* =========================
-   DARK MODE
-========================= */
+/* =====================================================
+   UNREAD NUMBER
+   ===================================================== */
 
-.dashboard.dark-mode .mini-chat {
-    background-color: var(--dark-bg-secondary);
+.unread-number {
+    display: inline-flex;
 
-    border-color: var(--dark-border);
+    align-items: center;
+    justify-content: center;
+
+    min-width: 20px;
+    height: 20px;
+
+    margin-left: 6px;
+    padding: 0 5px;
+
+    border-radius: 10px;
+
+    background: #eeeaff;
+    color: #5935e8;
+
+    font-size: 11px;
+    font-weight: 700;
 }
 
 
-.dashboard.dark-mode .chat-messages {
-    background-color: var(--dark-bg-secondary);
+/* =====================================================
+   MARK ALL AS READ BUTTON
+   ===================================================== */
+
+.mark-read {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #5935e8;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.mark-read:hover {
+    background: #4825cc;
+    transform: translateY(-1px);
 }
 
 
-.dashboard.dark-mode .message.received {
-    background-color: var(--dark-border);
+/* =====================================================
+   NOTIFICATIONS LIST
+   ===================================================== */
 
-    color: var(--dark-text-secondary);
+.notifications-list {
+    padding: 28px 14px 24px;
 }
 
 
-.dashboard.dark-mode .chat-input {
-    border-top-color: var(--dark-border);
+/* =====================================================
+   SECTION
+   ===================================================== */
+
+.notification-section {
+    margin-bottom: 26px;
+}
+
+.notification-section:last-of-type {
+    margin-bottom: 10px;
+}
+
+.notification-section h3 {
+    margin: 0 10px 12px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #374151;
 }
 
 
-.dashboard.dark-mode .chat-input input {
-    background-color: var(--dark-bg-primary);
+/* =====================================================
+   NOTIFICATION GROUP
+   ===================================================== */
 
-    border-color: var(--dark-border);
+.notification-group {
+    width: 100%;
 
-    color: var(--dark-text-primary);
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   INDIVIDUAL NOTIFICATION
+   ===================================================== */
+
+.notification {
+    position: relative;
+
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 17px 16px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    transition: background 0.2s ease;
+}
+
+.notification:last-child {
+    border-bottom: none;
+}
+
+.notification:hover {
+    background: #faf9ff;
+}
+
+
+/* =====================================================
+   UNREAD NOTIFICATION
+   ===================================================== */
+
+.notification.unread {
+    background: #faf9ff;
+}
+
+.notification.unread:hover {
+    background: #f6f3ff;
+}
+
+
+/* =====================================================
+   UNREAD DOT
+   ===================================================== */
+
+.unread-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #5935e8;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   NOTIFICATION ICON
+   ===================================================== */
+
+.notification-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+/* Project */
+
+.notification-icon.project {
+    background: #f0ebff;
+    color: #5935e8;
+}
+
+
+/* Event */
+
+.notification-icon.event {
+    background: #eaf9f1;
+    color: #16a36a;
+}
+
+
+/* Research */
+
+.notification-icon.research {
+    background: #fff0f7;
+    color: #df3282;
+}
+
+
+/* Success */
+
+.notification-icon.success {
+    background: #eaf9f1;
+    color: #16a36a;
+}
+
+
+/* Mention */
+
+.notification-icon.mention {
+    background: #eef4ff;
+    color: #3974e8;
+}
+
+
+/* General notification */
+
+.notification-icon.notification {
+    background: #f0ebff;
+    color: #5935e8;
+}
+
+
+/* Verified */
+
+.notification-icon.verified {
+    background: #eaf9f1;
+    color: #16a36a;
+}
+
+
+/* =====================================================
+   NOTIFICATION TEXT
+   ===================================================== */
+
+.notification-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-text h4 {
+    margin: 0 0 5px;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    line-height: 1.3;
+
+    color: #111827;
+}
+
+.notification-text p {
+    margin: 0 0 6px;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: #4b5563;
+}
+
+.notification-text span {
+    display: block;
+
+    font-size: 10px;
+
+    color: #8a92a3;
+}
+
+
+/* =====================================================
+   ACTION BUTTON
+   ===================================================== */
+
+.notification-button {
+    flex-shrink: 0;
+
+    min-width: 108px;
+
+    padding: 8px 14px;
+
+    border: 1px solid #d8d0f7;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #5935e8;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.notification-button:hover {
+    background: #f4f1ff;
+    border-color: #5935e8;
+}
+
+
+/* =====================================================
+   END MESSAGE
+   ===================================================== */
+
+.notifications-end {
+    padding: 22px 0 8px;
+
+    text-align: center;
+
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .notifications-page {
+        padding: 22px 20px 30px;
+    }
+
+    .notifications-tabs {
+        padding: 0 16px;
+    }
+
+    .tab {
+        padding: 0 10px;
+    }
+
+    .notification {
+        gap: 12px;
+    }
+
+    .notification-button {
+        min-width: auto;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .notifications-page {
+        padding: 18px 14px 25px;
+    }
+
+    .notifications-title {
+        margin-bottom: 20px;
+    }
+
+    .notifications-title h1 {
+        font-size: 23px;
+    }
+
+    .notifications-tabs {
+        min-height: auto;
+
+        padding: 10px 12px;
+
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .tabs-left {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .tab {
+        height: 42px;
+        flex-shrink: 0;
+    }
+
+    .tab.active::after {
+        bottom: 0;
+    }
+
+    .mark-read {
+        align-self: flex-end;
+    }
+
+    .notification {
+        align-items: flex-start;
+
+        padding: 15px 12px;
+    }
+
+    .notification-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .notification-button {
+        display: none;
+    }
+
+    .notification-text h4 {
+        font-size: 12px;
+    }
+
+    .notification-text p {
+        font-size: 11px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .title-icon {
+        width: 46px;
+        height: 46px;
+    }
+
+    .notifications-title h1 {
+        font-size: 21px;
+    }
+
+    .notifications-title p {
+        font-size: 11px;
+    }
+
+    .notification {
+        gap: 10px;
+    }
+
+    .notification-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .notification-icon svg {
+        width: 19px;
+        height: 19px;
+    }
 }
