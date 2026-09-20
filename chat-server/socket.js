@@ -22,20 +22,21 @@ const initializeSocket = (server) => {
                 `${socket.id} joined room: ${roomId}`
             );
 
-            socket.on("sendMessage", (data) => {
-
-                console.log("Message received: ", data);
-
-                io.to(roomId).emit("receieveMessage",  {
-
-                    username: data.username,
-                    message: data.message,
-                    roomId: data.roomId
-                });
-            })
-
+        })
+        
+        socket.on("sendMessage", (data) => {
+    
+            console.log("Message received: ", data);
+    
+            io.to(data.roomId).emit("receieveMessage",  {
+    
+                senderId: socket.id,
+                username: data.username,
+                message: data.message,
+                roomId: data.roomId
+            });
+            
         });
-
         socket.on("disconnect", () => {
 
             console.log(
@@ -44,8 +45,8 @@ const initializeSocket = (server) => {
             );
 
         });
-
     });
+    
 
     return io;
 };

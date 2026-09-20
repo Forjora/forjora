@@ -1,10 +1,8 @@
+import ChatLayout from "../../components/chat-server/ChatLayout";
 const MiniChat = () => {
 
     return (
-        <>
-            <i className="fa-solid fa-cloud"></i>
-            <h4>Loading content...</h4>
-        </>
+         <ChatLayout/>
     )
 }
 
