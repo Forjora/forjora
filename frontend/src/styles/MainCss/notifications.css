@@ -1,166 +1,582 @@
-/* =========================
-   NOTIFICATIONS
-========================= */
+/* =========================================================
+   NOTIFICATIONS PAGE
+========================================================= */
 
 .notifications-page {
-    width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  padding: 34px 40px 60px;
+  box-sizing: border-box;
 
-    min-height: 100%;
-
-    padding: var(--space-2xl);
-
-    background-color: var(--bg-primary);
-
-    color: var(--text-primary);
+  background: #f7f8fc;
+  color: #172033;
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* =========================================================
+   PAGE TITLE
+========================================================= */
 
-.notifications-header {
-    display: flex;
+.notifications-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 
-    justify-content: space-between;
+  margin-bottom: 24px;
+}
 
-    align-items: center;
+.title-icon {
+  width: 42px;
+  height: 42px;
 
-    margin-bottom: var(--space-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #151d32;
+
+  flex-shrink: 0;
+}
+
+.title-icon svg {
+  width: 29px;
+  height: 29px;
+  stroke-width: 2;
+}
+
+.notifications-title h1 {
+  margin: 0;
+
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+
+  color: #111827;
+}
+
+.notifications-title p {
+  margin: 4px 0 0;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: #64748b;
 }
 
 
-.notifications-header h1 {
-    font-size: 28px;
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.notifications-container {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 
-/* =========================
+/* =========================================================
+   TABS + MARK READ
+========================================================= */
+
+.notifications-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.tabs-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  height: 36px;
+  padding: 0 15px;
+
+  border: 1px solid #dce1eb;
+  border-radius: 20px;
+
+  background: #ffffff;
+  color: #475569;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  border-color: #c9c3ff;
+  color: #5146d8;
+  background: #faf9ff;
+}
+
+.tab.active {
+  background: #5b4cf6;
+  border-color: #5b4cf6;
+  color: #ffffff;
+
+  box-shadow: 0 3px 8px rgba(91, 76, 246, 0.18);
+}
+
+
+/* =========================================================
+   UNREAD NUMBER
+========================================================= */
+
+.unread-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 20px;
+  height: 20px;
+
+  padding: 0 5px;
+  box-sizing: border-box;
+
+  border-radius: 50%;
+
+  background: #eeecff;
+  color: #5548e8;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tab.active .unread-number {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MARK ALL AS READ
+========================================================= */
+
+.mark-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 12px;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #475569;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: all 0.2s ease;
+}
+
+.mark-read:hover {
+  background: #eeecff;
+  color: #5146d8;
+}
+
+.mark-read svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* =========================================================
    NOTIFICATION LIST
-========================= */
+========================================================= */
 
-.notification-list {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: var(--space-sm);
+.notifications-list {
+  width: 100%;
 }
 
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.notification-section {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.notification-section h3 {
+  margin: 0 0 11px;
+
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+
+  color: #17213a;
+}
+
+
+/* =========================================================
+   NOTIFICATION GROUP
+========================================================= */
+
+.notification-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   NOTIFICATION CARD
+========================================================= */
 
 .notification {
-    display: flex;
+  position: relative;
 
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: var(--space-md);
+  width: 100%;
+  min-height: 106px;
 
-    padding: var(--space-lg);
+  padding: 18px 20px 18px 27px;
+  box-sizing: border-box;
 
-    background-color: var(--bg-secondary);
+  background: #ffffff;
 
-    border: 1px solid var(--border-color);
+  border: 1px solid #e1e5ed;
+  border-radius: 10px;
 
-    border-radius: var(--radius-md);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.02);
 
-    transition: var(--transition-fast);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
+  overflow: hidden;
 }
-
 
 .notification:hover {
-    background-color: var(--primary-light);
+  border-color: #d7dbe6;
+
+  box-shadow:
+    0 5px 16px rgba(15, 23, 42, 0.06);
+
+  transform: translateY(-1px);
 }
 
 
-/* Unread */
+/* =========================================================
+   UNREAD PURPLE LINE
+========================================================= */
 
-.notification.unread {
-    border-left: 4px solid var(--primary-color);
+.notification.unread::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 4px;
+
+  background: #5b4cf6;
 }
 
 
-/* Icon */
+/* =========================================================
+   UNREAD DOT
+========================================================= */
+
+.unread-dot {
+  display: none;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
 
 .notification-icon {
-    width: 40px;
+  width: 48px;
+  height: 48px;
 
-    height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
+  flex-shrink: 0;
 
-    justify-content: center;
+  margin-right: 18px;
 
-    align-items: center;
+  border-radius: 50%;
 
-    border-radius: 50%;
+  background: #f1efff;
+  color: #5b4cf6;
+}
 
-    background-color: var(--primary-light);
+.notification-icon svg {
+  width: 24px;
+  height: 24px;
 
-    color: var(--primary-color);
+  stroke-width: 2;
 }
 
 
-/* Content */
+/* Different icon colors */
 
-.notification-content {
-    flex: 1;
+.notification-icon.project {
+  background: #f1efff;
+  color: #5b4cf6;
+}
+
+.notification-icon.event {
+  background: #f1efff;
+  color: #5b4cf6;
+}
+
+.notification-icon.research {
+  background: #f1efff;
+  color: #5b4cf6;
+}
+
+.notification-icon.success {
+  background: #f1efff;
+  color: #5b4cf6;
+}
+
+.notification-icon.mention {
+  background: #f1efff;
+  color: #5b4cf6;
+}
+
+.notification-icon.notification {
+  background: #f1efff;
+  color: #5b4cf6;
+}
+
+.notification-icon.verified {
+  background: #f1efff;
+  color: #5b4cf6;
 }
 
 
-.notification-content h3 {
-    margin-bottom: 4px;
+/* =========================================================
+   TEXT AREA
+========================================================= */
 
-    font-size: var(--font-md);
+.notification-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-text h4 {
+  margin: 0 0 3px;
+
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+
+  color: #17213a;
+}
+
+.notification-text p {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.45;
+
+  color: #64748b;
+}
+
+.notification-text > span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 13px;
+  line-height: 1.3;
+
+  color: #64748b;
 }
 
 
-.notification-content p {
-    color: var(--text-muted);
+/* =========================================================
+   ACTION BUTTON
+========================================================= */
 
-    font-size: var(--font-sm);
+.notification-button {
+  flex-shrink: 0;
+
+  margin-left: 25px;
+
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #eeecff;
+  color: #5146d8;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.notification-button:hover {
+  background: #e1ddff;
+  color: #4338ca;
+
+  transform: translateY(-1px);
 }
 
 
-/* Time */
+/* =========================================================
+   END MESSAGE
+========================================================= */
 
-.notification-time {
-    color: var(--text-muted);
+.notifications-end {
+  padding: 18px 0 5px;
 
-    font-size: var(--font-xs);
+  text-align: center;
+
+  font-size: 13px;
+  color: #94a3b8;
 }
 
 
-/* =========================
-   DARK MODE
-========================= */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
-.dashboard.dark-mode .notifications-page {
-    background-color: var(--dark-bg-primary);
+@media (max-width: 900px) {
 
-    color: var(--dark-text-primary);
+  .notifications-page {
+    padding: 30px 25px 50px;
+  }
+
+  .notifications-title h1 {
+    font-size: 32px;
+  }
+
+  .notifications-tabs {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .notification-button {
+    margin-left: 15px;
+  }
 }
 
 
-.dashboard.dark-mode .notification {
-    background-color: var(--dark-bg-secondary);
+@media (max-width: 650px) {
 
-    border-color: var(--dark-border);
-}
+  .notifications-page {
+    padding: 24px 16px 40px;
+  }
 
+  .notifications-title {
+    gap: 10px;
+  }
 
-.dashboard.dark-mode .notification:hover {
-    background-color: var(--dark-border);
-}
+  .title-icon {
+    width: 35px;
+    height: 35px;
+  }
 
+  .title-icon svg {
+    width: 25px;
+    height: 25px;
+  }
 
-.dashboard.dark-mode .notification-icon {
-    background-color: var(--dark-primary-light);
+  .notifications-title h1 {
+    font-size: 28px;
+  }
 
-    color: var(--dark-primary-text);
-}
+  .notifications-title p {
+    font-size: 14px;
+  }
 
+  .tabs-left {
+    width: 100%;
+    gap: 6px;
+  }
 
-.dashboard.dark-mode .notification-content p,
-.dashboard.dark-mode .notification-time {
-    color: var(--dark-text-secondary);
+  .tab {
+    height: 34px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .notification {
+    align-items: flex-start;
+
+    min-height: auto;
+
+    padding: 16px;
+  }
+
+  .notification-icon {
+    width: 42px;
+    height: 42px;
+
+    margin-right: 12px;
+  }
+
+  .notification-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .notification-text h4 {
+    font-size: 14px;
+  }
+
+  .notification-text p {
+    font-size: 13px;
+  }
+
+  .notification-text > span {
+    font-size: 12px;
+  }
+
+  .notification-button {
+    display: none;
+  }
+
+  .notification-section h3 {
+    font-size: 18px;
+  }
 }

@@ -2253,24 +2253,16 @@ body {
     .dashboard-section {
         padding: 14px;
     }
-
-
     .section-header h2 {
         font-size: 16px;
     }
-
-
     .section-header p {
         font-size: 11px;
     }
-
-
     .project-card,
     .research-card {
         padding: 10px;
     }
-
-
     .project-info h3 {
         font-size: 13px;
     }
