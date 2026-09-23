@@ -18,14 +18,14 @@ public class LoginUserService {
         this.userRepository = userRepository;
     }
 
-    public ResponseEntity<?> verifyUser(@RequestBody LoginRequest loginRequest) {
+    public User verifyUser(@RequestBody LoginRequest loginRequest) {
 
         User user = userRepository.findByUsername(loginRequest.getUsername()).orElseThrow(UserNotFoundException::new);
 
         if (user.getPassword().equals(loginRequest.getPassword())) {
-            return ResponseEntity.ok(user);
+            return user;
         } else
-            return ResponseEntity.badRequest().build();
+            throw new RuntimeException("Invalid password");
     }
 
 
