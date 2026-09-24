@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 // Public Pages
-import LandingPage from './pages/landingpage.jsx';
+import LandingPage from './pages/Landingpage.jsx';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import ThankingYou from "./pages/ThankingYou.jsx";

@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 import CreateTypeSelection from "../CreateNewButton-options/CreateTypeSelection";
 import EventForm from "../CreateNewButton-options/EventForm";
@@ -17,6 +19,35 @@ const Dashboard = () => {
     // Stores selected create type
     const [CreateType, setCreateType] = useState(null);
 
+    const navigate = useNavigate();
+
+    const checkSession = async () => {
+
+        try {
+                const response = await axios.get("https://forjora.onrender.com/auth/session",
+                    {
+                        withCredentials: true
+
+                    }
+                );
+
+            console.log(response.data);
+
+            } catch (error) {
+
+                if (error.response?.status === 401) {
+                    navigate("/login");
+                } else {
+                    console.log("Server unreachable");
+                }
+            }
+
+
+    };
+
+    useEffect(() => {
+        checkSession();
+    }, []);
 
     return (
         <div className="Dashboard-container">
