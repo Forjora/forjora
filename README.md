@@ -4,7 +4,7 @@
 
 Forjora is a collaborative platform built exclusively for college students to simplify team formation, project collaboration, hackathon participation, and research paper collaboration.
 
-The platform enables students to discover teammates based on skills and interests, manage projects, showcase their work, collaborate in real time, and receive AI-powered guidance throughout their journey.
+The platform enables students to discover teammates based on skills and interests, manage projects, showcase their work, collaborate in real time, and receive AI-powered guidance throughout their journey. 
 
 ---
 
