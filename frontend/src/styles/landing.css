@@ -46,6 +46,11 @@ a {
     outline: none;
     font-weight: bold;
     font-size: 15px;
+    transition: all 0.3s ease-out;
+}
+.login-btn:hover,.signup-btn:hover{
+    cursor:pointer;
+    transform:scale(1.05);
 }
 
 .signup-btn {
@@ -127,6 +132,12 @@ a {
     width: 12em;
     border-radius: 10px;
     outline: none;
+    transition: all 0.3s ease-out;
+}
+.login-button:hover,
+.start-btn:hover{
+cursor:pointer;
+transform: scale(1.05);
 }
 
 .buttons {
@@ -306,10 +317,11 @@ a {
 /* DESCRIPTION */
 
 .feature-description {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     font-weight:bold;
-    color: #666;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#666;
 }
 
 /* ARROWS */
@@ -361,6 +373,13 @@ a {
     height: 50px;
     width: 180px;
     border-radius: 10px;
+    transition: all 0.3s ease-out;
+
+}
+.action-start-button:hover,
+.action-login-button:hover{
+  cursor:pointer;
+  transform:scale(1.05)
 }
 
 .action-start-button {
@@ -472,6 +491,18 @@ form {
     border-radius: 10px;
     outline: none;
     border: none;
+    transition:all 0.3s ease-out;
+}
+.submit-btn:hover{
+    cursor:pointer;
+    transform:scale(1.05);
+}
+.fa-brands:hover,.fa-solid:hover,.fa-regular:hover{
+  cursor:pointer;
+  transform:scale(1.05);
+}
+.fa-brands,.fa-solid,.fa-regular{
+  transition:all 0.3s ease-out;
 }
 
 

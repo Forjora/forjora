@@ -9,7 +9,15 @@ import ProjectForm from "../CreateNewButton-options/ProjectForm";
 
 
 const Dashboard = () => {
-
+    const[Name,setName] = useState("XYZ");
+    const[Projects,setProjects] = useState(0);
+    const[Research,setResearch] = useState(0);
+    const[CompletedResearch,setCompletedResearch] = useState(0);
+    const[CompletedProjects,setCompletedProjects]=useState(0);
+    const[Event,setEvent] = useState(0);
+    const[Connections,setConnections]=useState(0);
+    const[WeekConnections,setWeekConnections]=useState(0);
+    // const[Projects,setProjects] = useState(0);
     // Controls which event tab is currently selected
     const [activeTab, setActiveTab] = useState("upcoming");
 
@@ -36,7 +44,7 @@ const Dashboard = () => {
             } catch (error) {
 
                 if (error.response?.status === 401) {
-                    navigate("/login");
+                    // navigate("/login");
                 } else {
                     console.log("Server unreachable");
                 }
@@ -61,7 +69,7 @@ const Dashboard = () => {
                 <div className="Dashboard-heading-container">
 
                     <h1 className="Dashboard-top-heading">
-                        Good Morning, Nikhil 👋
+                        Good Morning, {Name} 👋
                     </h1>
 
                     <p className="Dashboard-desc">
@@ -102,12 +110,12 @@ const Dashboard = () => {
 
                     <div className="stat-info">
 
-                        <h2>5</h2>
+                        <h2>{Projects}</h2>
 
                         <p>Active Projects</p>
 
-                        <span className="Project-desc">
-                            2 completed
+                        <span className="card-subtitle Project-desc">
+                            {CompletedProjects} completed
                         </span>
 
                     </div>
@@ -123,12 +131,12 @@ const Dashboard = () => {
 
                     <div className="stat-info">
 
-                        <h2>3</h2>
+                        <h2>{Research}</h2>
 
                         <p>Research Papers</p>
 
-                        <span className="Research-desc">
-                            1 published
+                        <span className="card-subtitle Research-desc">
+                            {CompletedResearch} published
                         </span>
 
                     </div>
@@ -144,11 +152,11 @@ const Dashboard = () => {
 
                     <div className="stat-info">
 
-                        <h2>2</h2>
+                        <h2>{Event}</h2>
 
                         <p>Upcoming Events</p>
 
-                        <span className="Event-desc">
+                        <span className=" card-subtitle Event-desc">
                             You're Registered
                         </span>
 
@@ -165,12 +173,12 @@ const Dashboard = () => {
 
                     <div className="stat-info">
 
-                        <h2>8</h2>
+                        <h2>{Connections}</h2>
 
                         <p>Connections</p>
 
-                        <span className="Connection-desc">
-                            +2 this week
+                        <span className=" card-subtitle Connection-desc">
+                            {WeekConnections} this week
                         </span>
 
                     </div>
@@ -897,8 +905,6 @@ const Dashboard = () => {
                         />
 
                     )}
-
-
                     {CreateType === "event" && (
 
                         <EventForm

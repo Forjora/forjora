@@ -22,26 +22,26 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                "https://forjora.onrender.com/auth/login",
+                "http://localhost:8080/auth/login",
                 {
-                    username,
-                    password
+                    username: username.trim(),
+                    password: password
                 },
                 {
-                    withCredentials: true
+                    withCredentials: true,
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
                 }
             );
-
-            console.log(response.status);
-            console.log(response.data);
 
             if (response.status === 200) {
                 navigate("/dashboard");
             }
 
         } catch (error) {
-            console.log(error.response?.status);
-            console.log(error.response?.data);
+            console.error("Login failed:", error.response?.data || error.message);
+            alert(error.response?.data || "Login failed. Please check your credentials.");
         }
     };
 

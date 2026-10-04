@@ -488,8 +488,9 @@ body {
 .Research-icon {
     background-color: rgba(27, 143, 27, 0.12);
 }
-
-
+.card-subtitle{
+    font-size: px;
+}
 .Research-icon .fa-file-lines {
     color: rgb(27, 143, 27);
 }
@@ -570,7 +571,7 @@ body {
 .Research-desc,
 .Event-desc,
 .Connection-desc {
-    font-size: 12px;
+    font-size: 16px;
 
     font-weight: 600;
 }
