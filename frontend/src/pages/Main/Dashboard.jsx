@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 import CreateTypeSelection from "../CreateNewButton-options/CreateTypeSelection";
@@ -9,56 +9,168 @@ import ProjectForm from "../CreateNewButton-options/ProjectForm";
 
 
 const Dashboard = () => {
-    const[Name,setName] = useState("XYZ");
-    const[Projects,setProjects] = useState(0);
-    const[Research,setResearch] = useState(0);
-    const[CompletedResearch,setCompletedResearch] = useState(0);
-    const[CompletedProjects,setCompletedProjects]=useState(0);
-    const[Event,setEvent] = useState(0);
-    const[Connections,setConnections]=useState(0);
-    const[WeekConnections,setWeekConnections]=useState(0);
-    // const[Projects,setProjects] = useState(0);
-    // Controls which event tab is currently selected
+
+    // =====================================================
+    // USER DATA
+    // =====================================================
+
+    const [user, setUser] = useState({
+        name: "XYZ"
+    });
+
+
+    // =====================================================
+    // DASHBOARD Analytics and  STATS
+    // =====================================================
+
+    const [stats, setStats] = useState({
+        activeProjects: 0,
+        completedProjects: 0,
+
+        researchPapers: 0,
+        publishedResearch: 0,
+
+        upcomingEvents: 0,
+
+        connections: 0,
+        weeklyConnections: 0
+    });
+
+
+    // =====================================================
+    // PROJECTS
+    // =====================================================
+
+    const [projects, setProjects] = useState([]);
+
+
+    // =====================================================
+    // RESEARCH PAPERS
+    // =====================================================
+
+    const [researchPapers, setResearchPapers] = useState([]);
+
+
+    // =====================================================
+    // EVENTS
+    // =====================================================
+
+    const [events, setEvents] = useState([]);
+
+
+    // =====================================================
+    // EVENT TAB
+    // =====================================================
+
     const [activeTab, setActiveTab] = useState("upcoming");
 
-    // Controls whether Create New modal is visible
+
+    // =====================================================
+    // CREATE NEW MODAL
+    // =====================================================
+
     const [showCreateModal, setshowCreateModal] = useState(false);
 
-    // Stores selected create type
     const [CreateType, setCreateType] = useState(null);
 
+
+    // =====================================================
+    // NAVIGATION
+    // =====================================================
+
     const navigate = useNavigate();
+
+
+    // =====================================================
+    // SESSION / DASHBOARD DATA
+    // =====================================================
 
     const checkSession = async () => {
 
         try {
-                const response = await axios.get("https://forjora.onrender.com/auth/session",
-                    {
-                        withCredentials: true
 
-                    }
-                );
-
-            console.log(response.data);
-
-            } catch (error) {
-
-                if (error.response?.status === 401) {
-                    // navigate("/login");
-                } else {
-                    console.log("Server unreachable");
+            const response = await axios.get(
+                "https://forjora.onrender.com/auth/session",
+                {
+                    withCredentials: true
                 }
+            );
+
+            console.log("Session data:", response.data);
+
+
+            /*
+             * Once your backend returns the complete
+             * dashboard data, it can populate all these
+             * states.
+             *
+             * Example:
+             *
+             * setUser({
+             *     name: response.data.user.name
+             * });
+             *
+             * setStats({
+             *     activeProjects: response.data.stats.activeProjects,
+             *     completedProjects: response.data.stats.completedProjects,
+             *     researchPapers: response.data.stats.researchPapers,
+             *     publishedResearch: response.data.stats.publishedResearch,
+             *     upcomingEvents: response.data.stats.upcomingEvents,
+             *     connections: response.data.stats.connections,
+             *     weeklyConnections: response.data.stats.weeklyConnections
+             * });
+             *
+             * setProjects(response.data.projects);
+             * setResearchPapers(response.data.researchPapers);
+             * setEvents(response.data.events);
+             */
+
+
+        } catch (error) {
+
+            if (error.response?.status === 401) {
+
+                // navigate("/login");
+
+            } else {
+
+                console.log("Server unreachable");
+
             }
 
+        }
 
     };
 
+
+    // =====================================================
+    // LOAD USER DATA
+    // =====================================================
+
     useEffect(() => {
+
         checkSession();
+
     }, []);
 
+
+    // =====================================================
+    // FILTER EVENTS
+    // =====================================================
+
+    const filteredEvents = events.filter(
+        (event) => event.status === activeTab
+    );
+
+
+    // =====================================================
+    // JSX
+    // =====================================================
+
     return (
+
         <div className="Dashboard-container">
+
 
             {/* =====================================================
                 HEADER
@@ -66,17 +178,24 @@ const Dashboard = () => {
 
             <div className="Dashboard-header">
 
+
                 <div className="Dashboard-heading-container">
 
                     <h1 className="Dashboard-top-heading">
-                        Good Morning, {Name} 👋
+
+                        Good Morning, {user.name} 👋
+
                     </h1>
 
+
                     <p className="Dashboard-desc">
+
                         Here's an overview of your projects, research and events
+
                     </p>
 
                 </div>
+
 
 
                 <div className="Dashboard-top-button">
@@ -84,16 +203,22 @@ const Dashboard = () => {
                     <button
                         className="CreateNew-Button"
                         onClick={() => {
+
                             setCreateType(null);
                             setshowCreateModal(true);
+
                         }}
                     >
+
                         + Create New
+
                     </button>
 
                 </div>
 
+
             </div>
+
 
 
             {/* =====================================================
@@ -102,95 +227,160 @@ const Dashboard = () => {
 
             <div className="Dashboard-stats">
 
+
+                {/* =================================================
+                    PROJECT STATS
+                ================================================= */}
+
                 <div className="stats-card">
+
 
                     <div className="stat-icon Projects-icon">
+
                         <i className="fa-solid fa-folder"></i>
+
                     </div>
+
 
                     <div className="stat-info">
 
-                        <h2>{Projects}</h2>
+                        <h2>
+                            {stats.activeProjects}
+                        </h2>
 
-                        <p>Active Projects</p>
+                        <p>
+                            Active Projects
+                        </p>
 
                         <span className="card-subtitle Project-desc">
-                            {CompletedProjects} completed
+
+                            {stats.completedProjects} completed
+
                         </span>
 
                     </div>
 
+
                 </div>
 
 
+
+                {/* =================================================
+                    RESEARCH STATS
+                ================================================= */}
+
                 <div className="stats-card">
+
 
                     <div className="stat-icon Research-icon">
+
                         <i className="fa-solid fa-file-lines"></i>
+
                     </div>
+
 
                     <div className="stat-info">
 
-                        <h2>{Research}</h2>
+                        <h2>
+                            {stats.researchPapers}
+                        </h2>
 
-                        <p>Research Papers</p>
+                        <p>
+                            Research Papers
+                        </p>
 
                         <span className="card-subtitle Research-desc">
-                            {CompletedResearch} published
+
+                            {stats.publishedResearch} published
+
                         </span>
 
                     </div>
 
+
                 </div>
 
 
+
+                {/* =================================================
+                    EVENT STATS
+                ================================================= */}
+
                 <div className="stats-card">
+
 
                     <div className="stat-icon Events-icon">
+
                         <i className="fa-solid fa-calendar"></i>
+
                     </div>
+
 
                     <div className="stat-info">
 
-                        <h2>{Event}</h2>
+                        <h2>
+                            {stats.upcomingEvents}
+                        </h2>
 
-                        <p>Upcoming Events</p>
+                        <p>
+                            Upcoming Events
+                        </p>
 
-                        <span className=" card-subtitle Event-desc">
+                        <span className="card-subtitle Event-desc">
+
                             You're Registered
+
                         </span>
 
                     </div>
 
+
                 </div>
 
+
+
+                {/* =================================================
+                    CONNECTION STATS
+                ================================================= */}
 
                 <div className="stats-card">
 
+
                     <div className="stat-icon Connections-icon">
+
                         <i className="fa-solid fa-users"></i>
+
                     </div>
+
 
                     <div className="stat-info">
 
-                        <h2>{Connections}</h2>
+                        <h2>
+                            {stats.connections}
+                        </h2>
 
-                        <p>Connections</p>
+                        <p>
+                            Connections
+                        </p>
 
-                        <span className=" card-subtitle Connection-desc">
-                            {WeekConnections} this week
+                        <span className="card-subtitle Connection-desc">
+
+                            {stats.weeklyConnections} this week
+
                         </span>
 
                     </div>
 
+
                 </div>
+
 
             </div>
 
 
+
             {/* =====================================================
                 LOWER SECTION
-                THREE COLUMNS
             ===================================================== */}
 
             <section className="dashboard-lower-section">
@@ -201,6 +391,7 @@ const Dashboard = () => {
                 ================================================= */}
 
                 <div className="dashboard-section projects-section">
+
 
                     <div className="section-header">
 
@@ -219,203 +410,151 @@ const Dashboard = () => {
                     </div>
 
 
+
                     <div className="project-list">
 
 
-                        {/* PROJECT 1 */}
+                        {projects.map((project) => (
 
-                        <div className="project-card">
+                            <div
+                                className="project-card"
+                                key={project.id}
+                            >
 
-                            <div className="project-icon purple">
-                                🚀
-                            </div>
 
-                            <div className="project-info">
+                                {/* PROJECT ICON */}
 
-                                <h3>
-                                    Forjora Web Platform
-                                </h3>
+                                <div
+                                    className={`project-icon ${
+                                        project.status === "Completed"
+                                            ? "green"
+                                            : "purple"
+                                    }`}
+                                >
 
-                                <span className="status in-progress">
-                                    In Progress
-                                </span>
-
-                                <div className="progress-row">
-
-                                    <div className="progress-bar">
-
-                                        <div
-                                            className="progress-fill purple-fill"
-                                            style={{ width: "65%" }}
-                                        ></div>
-
-                                    </div>
-
-                                    <span>65%</span>
+                                    {project.icon}
 
                                 </div>
 
-                                <p>
-                                    Milestone: Core Features Development
-                                </p>
-
-                            </div>
-
-                            <div className="project-members">
-                                👨🏻 👨🏻 👩🏻 👨🏻
-                                <span>+2</span>
-                            </div>
-
-                        </div>
 
 
-                        {/* PROJECT 2 */}
+                                {/* PROJECT INFORMATION */}
 
-                        <div className="project-card">
+                                <div className="project-info">
 
-                            <div className="project-icon purple">
-                                💬
-                            </div>
 
-                            <div className="project-info">
+                                    <h3>
+                                        {project.title}
+                                    </h3>
 
-                                <h3>
-                                    AI Study Buddy
-                                </h3>
 
-                                <span className="status in-progress">
-                                    In Progress
-                                </span>
+                                    <span
+                                        className={`status ${
+                                            project.status === "Completed"
+                                                ? "completed"
+                                                : "in-progress"
+                                        }`}
+                                    >
 
-                                <div className="progress-row">
+                                        {project.status}
 
-                                    <div className="progress-bar">
+                                    </span>
 
-                                        <div
-                                            className="progress-fill purple-fill"
-                                            style={{ width: "40%" }}
-                                        ></div>
+
+
+                                    {/* PROGRESS */}
+
+                                    <div className="progress-row">
+
+
+                                        <div className="progress-bar">
+
+                                            <div
+                                                className={`progress-fill ${
+                                                    project.status === "Completed"
+                                                        ? "green-fill"
+                                                        : "purple-fill"
+                                                }`}
+                                                style={{
+                                                    width: `${project.progress}%`
+                                                }}
+                                            ></div>
+
+                                        </div>
+
+
+                                        <span>
+
+                                            {project.progress}%
+
+                                        </span>
+
 
                                     </div>
 
-                                    <span>40%</span>
+
+
+                                    <p>
+
+                                        Milestone: {project.milestone}
+
+                                    </p>
+
 
                                 </div>
 
-                                <p>
-                                    Milestone: AI Integration
-                                </p>
-
-                            </div>
-
-                            <div className="project-members">
-                                👨🏻 👩🏻 👨🏻
-                                <span>+1</span>
-                            </div>
-
-                        </div>
 
 
-                        {/* PROJECT 3 */}
+                                {/* PROJECT MEMBERS */}
 
-                        <div className="project-card">
+                                <div className="project-members">
 
-                            <div className="project-icon purple">
-                                📈
-                            </div>
 
-                            <div className="project-info">
+                                    {project.members?.map(
+                                        (member, index) => (
 
-                                <h3>
-                                    Hackathon Tracker
-                                </h3>
+                                            <span key={index}>
 
-                                <span className="status in-progress">
-                                    In Progress
-                                </span>
+                                                {member}
 
-                                <div className="progress-row">
+                                            </span>
 
-                                    <div className="progress-bar">
+                                        )
+                                    )}
 
-                                        <div
-                                            className="progress-fill purple-fill"
-                                            style={{ width: "75%" }}
-                                        ></div>
 
-                                    </div>
+                                    {project.extraMembers > 0 && (
 
-                                    <span>75%</span>
+                                        <span>
+
+                                            +{project.extraMembers}
+
+                                        </span>
+
+                                    )}
+
 
                                 </div>
 
-                                <p>
-                                    Milestone: Frontend Complete
-                                </p>
 
                             </div>
 
-                            <div className="project-members">
-                                👩🏻 👨🏻
-                            </div>
+                        ))}
 
-                        </div>
-
-
-                        {/* PROJECT 4 */}
-
-                        <div className="project-card">
-
-                            <div className="project-icon green">
-                                ✓
-                            </div>
-
-                            <div className="project-info">
-
-                                <h3>
-                                    Campus Connect
-                                </h3>
-
-                                <span className="status completed">
-                                    Completed
-                                </span>
-
-                                <div className="progress-row">
-
-                                    <div className="progress-bar">
-
-                                        <div
-                                            className="progress-fill green-fill"
-                                            style={{ width: "100%" }}
-                                        ></div>
-
-                                    </div>
-
-                                    <span>100%</span>
-
-                                </div>
-
-                                <p>
-                                    Milestone: Project Completed
-                                </p>
-
-                            </div>
-
-                            <div className="project-members">
-                                👨🏻 👩🏻 👨🏻
-                                <span>+3</span>
-                            </div>
-
-                        </div>
 
                     </div>
 
 
+
                     <button className="view-all-button">
+
                         View all projects →
+
                     </button>
 
+
                 </div>
+
 
 
                 {/* =================================================
@@ -423,6 +562,7 @@ const Dashboard = () => {
                 ================================================= */}
 
                 <div className="dashboard-section research-section">
+
 
                     <div className="section-header">
 
@@ -441,156 +581,140 @@ const Dashboard = () => {
                     </div>
 
 
+
                     <div className="research-list">
 
 
-                        {/* RESEARCH 1 */}
+                        {researchPapers.map((paper) => (
 
-                        <div className="research-card">
+                            <div
+                                className="research-card"
+                                key={paper.id}
+                            >
 
-                            <div className="research-icon purple">
-                                📄
-                            </div>
 
-                            <div className="research-info">
+                                {/* RESEARCH ICON */}
 
-                                <h3>
-                                    Blockchain for Secure Healthcare
-                                    Data Management
-                                </h3>
+                                <div
+                                    className={`research-icon ${
+                                        paper.status === "Completed"
+                                            ? "green"
+                                            : "purple"
+                                    }`}
+                                >
 
-                                <span className="status in-progress">
-                                    In Progress
-                                </span>
-
-                                <div className="progress-row">
-
-                                    <div className="progress-bar">
-
-                                        <div
-                                            className="progress-fill purple-fill"
-                                            style={{ width: "60%" }}
-                                        ></div>
-
-                                    </div>
-
-                                    <span>60%</span>
+                                    📄
 
                                 </div>
 
-                                <p>
-                                    Milestone: Literature Review
-                                </p>
-
-                            </div>
-
-                            <div className="research-members">
-                                👩🏻 👨🏻 👨🏻
-                            </div>
-
-                        </div>
 
 
-                        {/* RESEARCH 2 */}
+                                {/* RESEARCH INFORMATION */}
 
-                        <div className="research-card">
+                                <div className="research-info">
 
-                            <div className="research-icon purple">
-                                📄
-                            </div>
 
-                            <div className="research-info">
+                                    <h3>
+                                        {paper.title}
+                                    </h3>
 
-                                <h3>
-                                    Explainable AI in Education
-                                </h3>
 
-                                <span className="status in-progress">
-                                    In Progress
-                                </span>
+                                    <span
+                                        className={`status ${
+                                            paper.status === "Completed"
+                                                ? "completed"
+                                                : "in-progress"
+                                        }`}
+                                    >
 
-                                <div className="progress-row">
+                                        {paper.status}
 
-                                    <div className="progress-bar">
+                                    </span>
 
-                                        <div
-                                            className="progress-fill purple-fill"
-                                            style={{ width: "30%" }}
-                                        ></div>
+
+
+                                    {/* PROGRESS */}
+
+                                    <div className="progress-row">
+
+
+                                        <div className="progress-bar">
+
+                                            <div
+                                                className={`progress-fill ${
+                                                    paper.status === "Completed"
+                                                        ? "green-fill"
+                                                        : "purple-fill"
+                                                }`}
+                                                style={{
+                                                    width: `${paper.progress}%`
+                                                }}
+                                            ></div>
+
+                                        </div>
+
+
+                                        <span>
+
+                                            {paper.progress}%
+
+                                        </span>
+
 
                                     </div>
 
-                                    <span>30%</span>
+
+
+                                    <p>
+
+                                        Milestone: {paper.milestone}
+
+                                    </p>
+
 
                                 </div>
 
-                                <p>
-                                    Milestone: Problem Definition
-                                </p>
-
-                            </div>
-
-                            <div className="research-members">
-                                👨🏻 👩🏻
-                            </div>
-
-                        </div>
 
 
-                        {/* RESEARCH 3 */}
+                                {/* RESEARCH MEMBERS */}
 
-                        <div className="research-card">
+                                <div className="research-members">
 
-                            <div className="research-icon green">
-                                📄
-                            </div>
 
-                            <div className="research-info">
+                                    {paper.members?.map(
+                                        (member, index) => (
 
-                                <h3>
-                                    Federated Learning for
-                                    Privacy Preservation
-                                </h3>
+                                            <span key={index}>
 
-                                <span className="status completed">
-                                    Completed
-                                </span>
+                                                {member}
 
-                                <div className="progress-row">
+                                            </span>
 
-                                    <div className="progress-bar">
+                                        )
+                                    )}
 
-                                        <div
-                                            className="progress-fill green-fill"
-                                            style={{ width: "100%" }}
-                                        ></div>
-
-                                    </div>
-
-                                    <span>100%</span>
 
                                 </div>
 
-                                <p>
-                                    Milestone: Paper Published
-                                </p>
 
                             </div>
 
-                            <div className="research-members">
-                                👩🏻 👨🏻 👨🏻
-                            </div>
+                        ))}
 
-                        </div>
 
                     </div>
 
 
+
                     <button className="view-all-button">
+
                         View all research papers →
+
                     </button>
 
+
                 </div>
+
 
 
                 {/* =================================================
@@ -598,6 +722,7 @@ const Dashboard = () => {
                 ================================================= */}
 
                 <div className="dashboard-section events-section">
+
 
                     <div className="section-header">
 
@@ -616,9 +741,11 @@ const Dashboard = () => {
                     </div>
 
 
+
                     {/* EVENT TABS */}
 
                     <div className="event-tabs">
+
 
                         <button
                             type="button"
@@ -629,8 +756,11 @@ const Dashboard = () => {
                             }
                             onClick={() => setActiveTab("upcoming")}
                         >
+
                             Upcoming
+
                         </button>
+
 
 
                         <button
@@ -642,8 +772,11 @@ const Dashboard = () => {
                             }
                             onClick={() => setActiveTab("attended")}
                         >
+
                             Attended
+
                         </button>
+
 
 
                         <button
@@ -655,238 +788,127 @@ const Dashboard = () => {
                             }
                             onClick={() => setActiveTab("missed")}
                         >
+
                             Missed
+
                         </button>
 
+
                     </div>
+
 
 
                     {/* EVENT LIST */}
 
                     <div className="event-list">
 
-                        {/* UPCOMING */}
 
-                        {activeTab === "upcoming" && (
-                            <>
+                        {filteredEvents.map((event) => (
 
-                                <div className="event-card">
+                            <div
+                                className={`event-card ${
+                                    event.status === "missed"
+                                        ? "missed"
+                                        : ""
+                                }`}
+                                key={event.id}
+                            >
 
-                                    <div className="event-date upcoming-event">
 
-                                        <strong>MAY</strong>
-                                        <span>25</span>
+                                {/* EVENT DATE */}
 
-                                    </div>
+                                <div
+                                    className={`event-date ${
+                                        event.status === "upcoming"
+                                            ? "upcoming-event"
+                                            : event.status === "attended"
+                                                ? "attended-event"
+                                                : "missed-event"
+                                    }`}
+                                >
 
-                                    <div className="event-info">
+                                    <strong>
+                                        {event.month}
+                                    </strong>
 
-                                        <h3>
-                                            CodeSprint 5.0
-                                        </h3>
-
-                                        <p>
-                                            📅 25 May 2025 • Online
-                                        </p>
-
-                                        <span className="event-type upcoming-event-text">
-                                            Hackathon
-                                        </span>
-
-                                    </div>
-
-                                    <span className="event-status upcoming-status">
-                                        Upcoming
+                                    <span>
+                                        {event.day}
                                     </span>
 
                                 </div>
 
 
-                                <div className="event-card">
 
-                                    <div className="event-date upcoming-event">
+                                {/* EVENT INFORMATION */}
 
-                                        <strong>JUN</strong>
-                                        <span>02</span>
+                                <div className="event-info">
 
-                                    </div>
 
-                                    <div className="event-info">
+                                    <h3>
+                                        {event.title}
+                                    </h3>
 
-                                        <h3>
-                                            Web Dev Workshop
-                                        </h3>
 
-                                        <p>
-                                            📅 02 Jun 2025 • Chandigarh
-                                        </p>
+                                    <p>
 
-                                        <span className="event-type upcoming-event-text">
-                                            Workshop
-                                        </span>
+                                        📅 {event.date} • {event.location}
 
-                                    </div>
+                                    </p>
 
-                                    <span className="event-status upcoming-status">
-                                        Upcoming
+
+                                    <span
+                                        className={`event-type ${
+                                            event.status === "upcoming"
+                                                ? "upcoming-event-text"
+                                                : event.status === "attended"
+                                                    ? "attended-event-text"
+                                                    : "missed-event-text"
+                                        }`}
+                                    >
+
+                                        {event.type}
+
                                     </span>
 
-                                </div>
-
-                            </>
-                        )}
-
-
-                        {/* ATTENDED */}
-
-                        {activeTab === "attended" && (
-                            <>
-
-                                <div className="event-card">
-
-                                    <div className="event-date attended-event">
-
-                                        <strong>FEB</strong>
-                                        <span>18</span>
-
-                                    </div>
-
-                                    <div className="event-info">
-
-                                        <h3>
-                                            Java Developer Meetup
-                                        </h3>
-
-                                        <p>
-                                            📅 18 Feb 2025 • Chandigarh
-                                        </p>
-
-                                        <span className="event-type attended-event-text">
-                                            Meetup
-                                        </span>
-
-                                    </div>
-
-                                    <span className="event-status attended-status">
-                                        Attended
-                                    </span>
 
                                 </div>
 
 
-                                <div className="event-card">
 
-                                    <div className="event-date attended-event">
+                                {/* EVENT STATUS */}
 
-                                        <strong>JAN</strong>
-                                        <span>28</span>
+                                <span
+                                    className={`event-status ${
+                                        event.status === "upcoming"
+                                            ? "upcoming-status"
+                                            : event.status === "attended"
+                                                ? "attended-status"
+                                                : "missed-status"
+                                    }`}
+                                >
 
-                                    </div>
+                                    {event.status === "upcoming"
+                                        ? "Upcoming"
+                                        : event.status === "attended"
+                                            ? "Attended"
+                                            : "Missed"}
 
-                                    <div className="event-info">
-
-                                        <h3>
-                                            React Workshop
-                                        </h3>
-
-                                        <p>
-                                            📅 28 Jan 2025 • Online
-                                        </p>
-
-                                        <span className="event-type attended-event-text">
-                                            Workshop
-                                        </span>
-
-                                    </div>
-
-                                    <span className="event-status attended-status">
-                                        Attended
-                                    </span>
-
-                                </div>
-
-                            </>
-                        )}
+                                </span>
 
 
-                        {/* MISSED */}
+                            </div>
 
-                        {activeTab === "missed" && (
-                            <>
+                        ))}
 
-                                <div className="event-card missed">
-
-                                    <div className="event-date missed-event">
-
-                                        <strong>APR</strong>
-                                        <span>10</span>
-
-                                    </div>
-
-                                    <div className="event-info">
-
-                                        <h3>
-                                            HackOverflow 2025
-                                        </h3>
-
-                                        <p>
-                                            📅 10 Apr 2025 • Delhi
-                                        </p>
-
-                                        <span className="event-type missed-event-text">
-                                            Hackathon
-                                        </span>
-
-                                    </div>
-
-                                    <span className="event-status missed-status">
-                                        Missed
-                                    </span>
-
-                                </div>
-
-
-                                <div className="event-card missed">
-
-                                    <div className="event-date missed-event">
-
-                                        <strong>MAR</strong>
-                                        <span>22</span>
-
-                                    </div>
-
-                                    <div className="event-info">
-
-                                        <h3>
-                                            UI/UX Design Workshop
-                                        </h3>
-
-                                        <p>
-                                            📅 22 Mar 2025 • Online
-                                        </p>
-
-                                        <span className="event-type missed-event-text">
-                                            Workshop
-                                        </span>
-
-                                    </div>
-
-                                    <span className="event-status missed-status">
-                                        Missed
-                                    </span>
-
-                                </div>
-
-                            </>
-                        )}
 
                     </div>
 
-                    {/* View all events button intentionally removed */}
 
                 </div>
 
+
             </section>
+
 
 
             {/* =====================================================
@@ -897,6 +919,9 @@ const Dashboard = () => {
 
                 <div className="create-modal-overlay">
 
+
+                    {/* CREATE TYPE */}
+
                     {CreateType === null && (
 
                         <CreateTypeSelection
@@ -905,6 +930,11 @@ const Dashboard = () => {
                         />
 
                     )}
+
+
+
+                    {/* EVENT FORM */}
+
                     {CreateType === "event" && (
 
                         <EventForm
@@ -914,6 +944,9 @@ const Dashboard = () => {
 
                     )}
 
+
+
+                    {/* RESEARCH FORM */}
 
                     {CreateType === "research" && (
 
@@ -925,6 +958,9 @@ const Dashboard = () => {
                     )}
 
 
+
+                    {/* PROJECT FORM */}
+
                     {CreateType === "project" && (
 
                         <ProjectForm
@@ -934,12 +970,16 @@ const Dashboard = () => {
 
                     )}
 
+
                 </div>
 
             )}
 
+
         </div>
+
     );
+
 };
 
 
